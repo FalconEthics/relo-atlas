@@ -1,0 +1,67 @@
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.row {
+  cursor: pointer;
+  border-bottom: 1px solid #15152a;
+  transition: background 0.15s;
+}
+
+.rowHover {
+  background: #13132a;
+}
+
+.rowActive {
+  background: #111130;
+  border-bottom: none;
+}
+
+.cellMuted {
+  color: #4a4a6a;
+}
+
+.cellTitle {
+  font-weight: 600;
+  color: #d0d0e8;
+  font-size: 14px;
+}
+
+.barTrack {
+  width: 120px;
+  height: 6px;
+  background: #1a1a2e;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+.tierBadge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 7px;
+  border-radius: 3px;
+  color: #0a0a1a;
+}
+
+.expandedRow {
+  border-bottom: 1px solid #222;
+}
+
+.expandedCard {
+  background: #0e0e28;
+  padding: 14px 16px 14px 48px;
+  border-top: 1px solid #1e1e3e;
+}

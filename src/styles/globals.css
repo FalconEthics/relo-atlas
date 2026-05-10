@@ -1,0 +1,44 @@
+:root {
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-serif: "Playfair Display", "Times New Roman", serif;
+
+  --bg: #0a0a1a;
+  --panel: #101028;
+  --panel-strong: #0f0f26;
+  --panel-soft: #0a0a1e;
+  --stroke: #1a1a30;
+  --stroke-strong: #2a2a4a;
+  --text: #e2e2e8;
+  --muted: #9090b8;
+  --muted-strong: #6b6b8d;
+  --accent: #a5b4fc;
+  --accent-strong: #6366f1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+}
