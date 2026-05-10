@@ -65,7 +65,7 @@ export function CountryTable({
                   ? `${selectedField.name} sector: ${selectedField.desc}`
                   : country.d[view]
                 : null;
-            const categoryScore = (country.es || country.s)[view];
+            const categoryScore = view === "overall" ? null : (country.es || country.s)[view];
 
             return (
               <Fragment key={country.c}>
@@ -132,16 +132,18 @@ export function CountryTable({
                           <span style={{ fontFamily: fontMono, fontSize: 12, color: "#a5b4fc", fontWeight: 600 }}>
                             {isTechView ? `${selectedField.name} Sector` : activeCategory?.name}
                           </span>
-                          <span
-                            style={{
-                              fontFamily: fontMono,
-                              fontSize: 11,
-                              color: scoreColor(categoryScore),
-                              fontWeight: 700,
-                            }}
-                          >
-                            {categoryScore}/10
-                          </span>
+                           {categoryScore !== null && (
+                             <span
+                               style={{
+                                 fontFamily: fontMono,
+                                 fontSize: 11,
+                                 color: scoreColor(categoryScore),
+                                 fontWeight: 700,
+                               }}
+                             >
+                               {categoryScore}/10
+                             </span>
+                           )}
                           <span style={{ fontFamily: fontMono, fontSize: 10, color: "#4a4a6a" }}>·</span>
                           <span style={{ fontFamily: fontMono, fontSize: 10, color: "#4a4a6a" }}>
                             Rank #{index + 1} of {countries.length}
