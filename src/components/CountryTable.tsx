@@ -62,7 +62,7 @@ export function CountryTable({
             const categoryInfo =
               view !== "overall"
                 ? isTechView && selectedField.id !== "technology"
-                  ? `${selectedField.name} sector: ${selectedField.desc}`
+                  ? `${selectedField.name} sector: ${selectedField.notes?.[country.c] ?? selectedField.desc}`
                   : country.d[view]
                 : null;
             const categoryScore = view === "overall" ? null : (country.es || country.s)[view];

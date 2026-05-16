@@ -59,7 +59,7 @@ export default function App() {
       list = list.filter((country) => country.r === region);
     }
 
-    list.sort((a, b) => (view === "overall" ? b.w - a.w : (b.s[view] || 0) - (a.s[view] || 0)));
+    list.sort((a, b) => (view === "overall" ? b.w - a.w : (b.es?.[view] ?? 0) - (a.es?.[view] ?? 0)));
 
     return list;
   }, [view, region, customWeights, selectedField]);

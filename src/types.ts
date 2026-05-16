@@ -57,6 +57,7 @@ export type CareerFieldId =
   | "legal"
   | "marketing"
   | "media"
+  | "adult-entertainment"
   | "education"
   | "architecture"
   | "construction"
@@ -79,6 +80,7 @@ export type CareerField = {
   icon: string;
   desc: string;
   scores: Record<CountryCode, number>;
+  notes?: Partial<Record<CountryCode, string>>;
 };
 
 export type Source = {

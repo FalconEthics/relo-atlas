@@ -582,6 +582,28 @@ export const FIELD_SOURCES: Record<CareerFieldId, Source[]> = {
       what: "Country-level gaming revenue breakdown validating Japan/KR/US positions",
     },
   ],
+  "adult-entertainment": [
+    {
+      name: "NSWP – Sex Work Law Map",
+      url: "https://www.nswp.org/sex-work-laws-map",
+      what: "Country-by-country legal frameworks (criminalized, legalization, decriminalization, Nordic model)",
+    },
+    {
+      name: "NSWP – Guide to Legal Models",
+      url: "https://www.nswp.org/sites/default/files/guide_to_legal_models_english_prf04.pdf",
+      what: "Explains how legal models affect safety, rights, and access to protection",
+    },
+    {
+      name: "NSWP – Country Profiles",
+      url: "https://www.nswp.org/resources",
+      what: "Legal status summaries and enforcement context by country",
+    },
+    {
+      name: "Amnesty International – Policy on Sex Work",
+      url: "https://www.hivlawandpolicy.org/sites/default/files/Amnesty%20Prostitution%20Policy%20document%C2%A0.pdf",
+      what: "Human-rights framing around criminalization and protection impacts",
+    },
+  ],
   education: [
     {
       name: "QS World University Rankings 2025",
