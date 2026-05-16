@@ -30,6 +30,8 @@ export function RankingControls({
   fontMono,
   description,
 }: RankingControlsProps) {
+  const viewDescription = view === "tech" ? selectedField.desc : description;
+
   return (
     <>
       <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
@@ -112,7 +114,7 @@ export function RankingControls({
         ))}
       </div>
 
-      {view !== "overall" && activeCategory && description && (
+      {view !== "overall" && activeCategory && viewDescription && (
         <div
           style={{
             background: "#101028",
@@ -166,7 +168,7 @@ export function RankingControls({
               paddingTop: 10,
             }}
           >
-            {description}
+            {viewDescription}
           </p>
         </div>
       )}

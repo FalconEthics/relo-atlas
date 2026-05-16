@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import type { Category, CategoryId, CountryData, CountryScores } from "../types";
+import type { CareerField, Category, CategoryId, CountryData, CountryScores } from "../types";
 import { scoreColor, scoreTier } from "../utils/score";
 import tableStyles from "../styles/app-table.module.css";
 
@@ -9,7 +9,7 @@ type CountryTableProps = {
   view: CategoryId | "overall";
   countries: CountryRow[];
   activeCategory: Category | undefined;
-  selectedField: { id: string; name: string; icon: string; desc: string };
+  selectedField: CareerField;
   expandedRow: string | null;
   onToggleRow: (countryCode: string) => void;
   onOpenDetail: (countryCode: string) => void;
@@ -61,7 +61,7 @@ export function CountryTable({
             const isExpanded = expandedRow === country.c && view !== "overall";
             const categoryInfo =
               view !== "overall"
-                ? isTechView && selectedField.id !== "technology"
+                ? isTechView
                   ? `${selectedField.name} sector: ${selectedField.notes?.[country.c] ?? selectedField.desc}`
                   : country.d[view]
                 : null;
