@@ -124,7 +124,7 @@ export function CountryDetailModal({
       </div>
 
       {[
-        { label: "DEAL-BREAKERS", text: country.d.deal, color: "#ef4444" },
+        { label: "PRIMARY DRAWBACKS", text: country.d.deal, color: "#ef4444" },
         { label: "PARENT PATHWAY", text: country.d.parent, color: "#eab308" },
       ].map((block) => (
         <div

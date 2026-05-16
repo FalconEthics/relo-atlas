@@ -8,8 +8,8 @@ export const CAREER_FIELDS: CareerField[] = [
     desc:
       "Software engineering, product, DevOps, AI/ML, SRE. Evaluated on SWE compensation, FAANG presence, startup ecosystem maturity, and senior career ceiling.",
     scores: {
-      SG: 9,
-      CH: 8,
+      SG: 7,
+      CH: 9,
       NO: 6,
       AU: 7,
       CZ: 5,
@@ -22,7 +22,7 @@ export const CAREER_FIELDS: CareerField[] = [
       IE: 8,
       NL: 7,
       LU: 5,
-      GB: 8,
+      GB: 9,
       CA: 7,
       EE: 5,
       PT: 4,
