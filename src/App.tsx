@@ -1,6 +1,5 @@
 import { useMemo, useState } from "react";
 import { Header } from "./components/Header";
-import { MapPanel } from "./components/MapPanel";
 import { RankingControls } from "./components/RankingControls";
 import { CountryTable } from "./components/CountryTable";
 import { InsightsFooter } from "./components/InsightsFooter";
@@ -30,7 +29,6 @@ export default function App() {
   const [region, setRegion] = useState<RegionFilter>("All");
   const [expandedRow, setExpandedRow] = useState<string | null>(null);
   const [showFramework, setShowFramework] = useState(false);
-  const [showMap, setShowMap] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [selectedField, setSelectedField] = useState<CareerFieldId>("technology");
   const [customWeights, setCustomWeights] = useState(CATEGORIES.map((category) => category.w));
@@ -97,8 +95,6 @@ export default function App() {
         fontMono={FONT_MONO}
         fontSerif={FONT_SERIF}
       />
-
-      <MapPanel open={showMap} onToggle={() => setShowMap((prev) => !prev)} fontMono={FONT_MONO} />
 
       <RankingControls
         view={view}

@@ -31,6 +31,45 @@ export function CountryDetailModal({
 }: CountryDetailModalProps) {
   if (!country) return null;
 
+  const categoryScore = (id: Category["id"]) => (id === "tech" ? effectiveScores : country.s)?.[id] ?? 0;
+
+  const stripParentNotes = (text: string) => {
+    const cleaned = text
+      .split(/(?<=[.!?])\s+/)
+      .filter((sentence) => !/parent|parents|adr|super visa/i.test(sentence))
+      .join(" ")
+      .trim();
+    return cleaned.length > 0 ? cleaned : "Immigration pathway remains a notable weakness for long-term settlement.";
+  };
+
+  const categoryText = (id: Category["id"], score: number) => {
+    if (id === "tech") {
+      if (selectedField.id !== "technology") {
+        return `${selectedField.name} sector score for ${country.n}: ${score}/10. ${selectedField.desc}`;
+      }
+      return country.d.tech;
+    }
+
+    const baseText = country.d[id];
+    return id === "immi" ? stripParentNotes(baseText) : baseText;
+  };
+
+  const primaryDrawbacks = categories
+    .map((cat, index) => {
+      const score = categoryScore(cat.id);
+      return {
+        ...cat,
+        score,
+        index,
+        text: categoryText(cat.id, score),
+      };
+    })
+    .sort((a, b) => (a.score !== b.score ? a.score - b.score : a.index - b.index));
+
+  const cutoffIndex = Math.min(primaryDrawbacks.length - 1, 2);
+  const cutoffScore = primaryDrawbacks[cutoffIndex]?.score ?? 0;
+  const displayedDrawbacks = primaryDrawbacks.filter((item, index) => index <= cutoffIndex || item.score === cutoffScore);
+
   return (
     <ModalShell open={open} onClose={onClose} maxWidth={840} zIndex={1000}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
@@ -123,29 +162,46 @@ export function CountryDetailModal({
         })}
       </div>
 
-      {[
-        { label: "PRIMARY DRAWBACKS", text: country.d.deal, color: "#ef4444" },
-        { label: "PARENT PATHWAY", text: country.d.parent, color: "#eab308" },
-      ].map((block) => (
+      <div style={{ background: "#0d0d22", border: "1px solid #1a1a30", borderRadius: 8, padding: 14, marginBottom: 8 }}>
         <div
-          key={block.label}
-          style={{ background: "#0d0d22", border: "1px solid #1a1a30", borderRadius: 8, padding: 14, marginBottom: 8 }}
+          style={{
+            fontFamily: fontMono,
+            fontSize: 11,
+            color: "#ef4444",
+            letterSpacing: 1,
+            marginBottom: 6,
+            fontWeight: 700,
+          }}
         >
-          <div
-            style={{
-              fontFamily: fontMono,
-              fontSize: 11,
-              color: block.color,
-              letterSpacing: 1,
-              marginBottom: 6,
-              fontWeight: 700,
-            }}
-          >
-            {block.label}
-          </div>
-          <p style={{ fontSize: 13, color: "#8888aa", lineHeight: 1.6, margin: 0 }}>{block.text}</p>
+          PRIMARY DRAWBACKS
         </div>
-      ))}
+        <ul style={{ margin: 0, paddingLeft: 16 }}>
+          {displayedDrawbacks.map((item, index) => (
+            <li key={item.id} style={{ marginBottom: index === displayedDrawbacks.length - 1 ? 0 : 10 }}>
+              <div style={{ fontFamily: fontMono, fontSize: 11, color: "#6b6b8d", marginBottom: 4 }}>
+                {item.icon} {item.name} · {item.score}/10
+              </div>
+              <div style={{ fontSize: 12, color: "#8888aa", lineHeight: 1.6 }}>{item.text}</div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div style={{ background: "#0d0d22", border: "1px solid #1a1a30", borderRadius: 8, padding: 14, marginBottom: 8 }}>
+        <div
+          style={{
+            fontFamily: fontMono,
+            fontSize: 11,
+            color: "#eab308",
+            letterSpacing: 1,
+            marginBottom: 6,
+            fontWeight: 700,
+          }}
+        >
+          PARENT PATHWAY
+        </div>
+        <p style={{ fontSize: 13, color: "#8888aa", lineHeight: 1.6, margin: 0 }}>{country.d.parent}</p>
+      </div>
     </ModalShell>
   );
 }
