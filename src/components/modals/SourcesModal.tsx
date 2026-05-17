@@ -104,6 +104,10 @@ export function SourcesModal({
         ))}
       </div>
 
+      <p style={{ fontFamily: fontMono, fontSize: 10, color: "#4a4a6a", margin: "0 0 16px", lineHeight: 1.5 }}>
+        These are the primary sources used for scoring. Many additional reports, datasets, and expert analyses were also factored in — an exhaustive list is not practical to publish.
+      </p>
+
       {isField && (
         <div style={{ background: "#0a0a1e", border: "1px solid #1a1a30", borderRadius: 8, padding: "12px 14px", marginBottom: 12 }}>
           <p style={{ fontFamily: fontMono, fontSize: 10, color: "#a5b4fc", letterSpacing: 1, margin: "0 0 6px" }}>

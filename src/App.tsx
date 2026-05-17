@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Header } from "./components/Header";
 import { RankingControls } from "./components/RankingControls";
 import { CountryTable } from "./components/CountryTable";
+import { FinalBattlePanel } from "./components/FinalBattlePanel";
 import { InsightsFooter } from "./components/InsightsFooter";
 import { CountryDetailModal } from "./components/modals/CountryDetailModal";
 import { SettingsModal } from "./components/modals/SettingsModal";
@@ -20,7 +21,7 @@ const FONT_SANS = "'DM Sans', system-ui, sans-serif";
 const FONT_MONO = "'JetBrains Mono', monospace";
 const FONT_SERIF = "'Playfair Display', serif";
 
-type ViewMode = CategoryId | "overall";
+type ViewMode = CategoryId | "overall" | "battle";
 
 export default function App() {
   const [view, setView] = useState<ViewMode>("overall");
@@ -41,6 +42,7 @@ export default function App() {
 
   const activeCategory = CATEGORIES.find((category) => category.id === view);
   const field = CAREER_FIELDS.find((f) => f.id === selectedField) || CAREER_FIELDS[0];
+  const isOverallView = view === "overall" || view === "battle";
 
   const effectiveScores = (country: CountryData): CountryScores => ({
     ...country.s,
@@ -57,10 +59,12 @@ export default function App() {
       list = list.filter((country) => country.r === region);
     }
 
-    list.sort((a, b) => (view === "overall" ? b.w - a.w : (b.es?.[view] ?? 0) - (a.es?.[view] ?? 0)));
+    list.sort((a, b) => (isOverallView ? b.w - a.w : (b.es?.[view] ?? 0) - (a.es?.[view] ?? 0)));
 
     return list;
-  }, [view, region, customWeights, selectedField]);
+  }, [view, region, customWeights, selectedField, isOverallView]);
+
+  const topFive = sorted.slice(0, 5);
 
   const formattedSourcesField = sourcesField ? CAREER_FIELDS.find((entry) => entry.id === sourcesField)?.name ?? field.name : field.name;
 
@@ -108,22 +112,38 @@ export default function App() {
         onSetSourcesField={setSourcesField}
         onClearExpanded={() => setExpandedRow(null)}
         fontMono={FONT_MONO}
-        description={view === "tech" ? field.desc : view !== "overall" ? DESCRIPTIONS[view] : undefined}
+        description={view === "tech" ? field.desc : view !== "overall" && view !== "battle" ? DESCRIPTIONS[view] : undefined}
       />
 
-      <CountryTable
-        view={view}
-        countries={sorted}
-        activeCategory={activeCategory}
-        selectedField={field}
-        expandedRow={expandedRow}
-        onToggleRow={(countryCode) => setExpandedRow(expandedRow === countryCode ? null : countryCode)}
-        onOpenDetail={(countryCode) => {
-          setSelectedCountry(countryCode);
-          setCatNote(null);
-        }}
-        fontMono={FONT_MONO}
-      />
+      {view === "battle" ? (
+        <FinalBattlePanel
+          countries={topFive}
+          categories={CATEGORIES}
+          customWeights={customWeights}
+          selectedField={field}
+          effectiveScores={effectiveScores}
+          onOpenDetail={(countryCode) => {
+            setSelectedCountry(countryCode);
+            setCatNote(null);
+          }}
+          fontMono={FONT_MONO}
+          fontSerif={FONT_SERIF}
+        />
+      ) : (
+        <CountryTable
+          view={view}
+          countries={sorted}
+          activeCategory={activeCategory}
+          selectedField={field}
+          expandedRow={expandedRow}
+          onToggleRow={(countryCode) => setExpandedRow(expandedRow === countryCode ? null : countryCode)}
+          onOpenDetail={(countryCode) => {
+            setSelectedCountry(countryCode);
+            setCatNote(null);
+          }}
+          fontMono={FONT_MONO}
+        />
+      )}
 
       <InsightsFooter fontMono={FONT_MONO} />
 

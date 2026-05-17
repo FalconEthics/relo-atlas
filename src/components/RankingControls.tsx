@@ -2,8 +2,8 @@ import { CATEGORIES } from "../data/categories";
 import type { CareerField, Category, CategoryId, RegionFilter } from "../types";
 
 type RankingControlsProps = {
-  view: CategoryId | "overall";
-  onChangeView: (next: CategoryId | "overall") => void;
+  view: CategoryId | "overall" | "battle";
+  onChangeView: (next: CategoryId | "overall" | "battle") => void;
   region: RegionFilter;
   onChangeRegion: (next: RegionFilter) => void;
   activeCategory: Category | undefined;
@@ -55,8 +55,28 @@ export function RankingControls({
         >
           🏆 FINAL RANKING
         </button>
+        <button
+          onClick={() => {
+            onChangeView("battle");
+            onClearExpanded();
+          }}
+          type="button"
+          style={{
+            fontFamily: fontMono,
+            fontSize: 12,
+            padding: "6px 14px",
+            borderRadius: 6,
+            border: view === "battle" ? "1px solid #ef4444" : "1px solid #2a2a4a",
+            background: view === "battle" ? "#2a0b1b" : "transparent",
+            color: view === "battle" ? "#fca5a5" : "#6b6b8d",
+            cursor: "pointer",
+            fontWeight: 700,
+          }}
+        >
+          ⚔ FINAL BATTLE
+        </button>
         <span style={{ fontFamily: fontMono, fontSize: 10, color: "#4a4a6a" }}>
-          Weighted score across all 16 categories
+          {view === "battle" ? "Top 5 showdown based on your weights" : "Weighted score across all 16 categories"}
         </span>
       </div>
 
@@ -114,7 +134,7 @@ export function RankingControls({
         ))}
       </div>
 
-      {view !== "overall" && activeCategory && viewDescription && (
+      {view !== "overall" && view !== "battle" && activeCategory && viewDescription && (
         <div
           style={{
             background: "#101028",
