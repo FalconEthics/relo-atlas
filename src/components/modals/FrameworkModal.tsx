@@ -15,21 +15,31 @@ export function FrameworkModal({ open, onClose, categories, fontMono, fontSerif 
     {
       title: null,
       body:
-        "Most 'best countries' discussions online are shallow. They reduce an entire country to salary, weather, taxes, safety rankings, and random stereotypes. But long-term emigration is far more complex. A country can look incredible on paper and still feel wrong once you actually live there. This framework evaluates countries more holistically and realistically.",
+        "Most 'best countries' discussions online are shallow. They reduce an entire country to salary, weather, taxes, safety rankings, and stereotypes. But long-term emigration is far more complex. A country can look incredible on paper and still feel wrong once you actually live there. This framework evaluates countries more holistically and realistically.",
     },
     {
       title: "What this framework answers",
       body:
-        "Can I build a meaningful long-term career there? Will I feel welcomed socially? Is the country likely to stay stable over the next 20–40 years? Does daily life actually feel enjoyable? Is the infrastructure intelligent and future-ready? Can I realistically build wealth and eventually settle permanently? Does the country's culture and historical mindset resonate with me?",
+        "Can I build a meaningful long-term career there? Will I feel welcomed socially? Is the country likely to stay stable over the next 20–40 years? Does daily life feel enjoyable? Is the infrastructure intelligent and future-ready? Can I realistically build wealth and eventually settle permanently? Does the country's culture and historical mindset resonate with me?",
     },
     {
       title: "Scoring system",
-      body: "1–3 = Weak / major downside · 4–6 = Mixed / acceptable · 7–8 = Strong · 9–10 = Exceptional",
+      body: "Category scores are 0–10. Final ranking scores are 0–100 (weighted + penalties).",
     },
     {
-      title: "Philosophy",
+      title: "Methodology (4 stages)",
       body:
-        "This framework intentionally combines objective metrics, long-term structural analysis, culture and psychology, lived quality-of-life factors, and future-oriented thinking. Some categories matter emotionally. Some matter financially. Some only become important after 10 years. A country that is 'good at everything' is not automatically the best fit. A country that excels at the things you personally value most usually wins.",
+        "1) Base Weighted Score — standard weighted sum across all categories. 2) Priority Penalties — your top priorities apply non-linear penalties if scores are weak. 3) Gate Rules — certain categories (immigration, safety, healthcare, housing) act as soft vetoes with caps or extra penalties. 4) Final Score — Base × Priority Penalty × Gate Penalty.",
+    },
+    {
+      title: "Priority penalty curve",
+      body:
+        "9–10 → 1.00 · 8 → 0.97 · 7 → 0.93 · 6 → 0.88 · 5 → 0.80 · 4 → 0.68 · 3 → 0.52 · 2 → 0.35 · 1 → 0.20",
+    },
+    {
+      title: "Why this matters",
+      body:
+        "The system is designed to feel more human: a country should not win purely by averaging high across everything. Weaknesses in core priorities should drag rankings down harder, while still keeping the math explainable and transparent.",
     },
   ];
 
@@ -41,7 +51,7 @@ export function FrameworkModal({ open, onClose, categories, fontMono, fontSerif 
             Emigration Research Framework
           </h2>
           <p style={{ fontFamily: fontMono, fontSize: 10, color: "#5b5b7d", margin: 0, letterSpacing: 1 }}>
-            METHODOLOGY · SCORING GUIDE · PRIORITY WEIGHTS
+            METHODOLOGY · PRIORITY PENALTIES · GATE RULES
           </p>
         </div>
         <button
@@ -88,12 +98,12 @@ export function FrameworkModal({ open, onClose, categories, fontMono, fontSerif 
           fontFamily: fontMono,
           fontSize: 11,
           color: "#a5b4fc",
-          letterSpacing: 1,
-          marginBottom: 16,
-          textTransform: "uppercase",
-        }}
-      >
-        Priority Weight Distribution
+           letterSpacing: 1,
+           marginBottom: 16,
+           textTransform: "uppercase",
+         }}
+        >
+        Priority Weight Distribution (Mik's Default)
       </h3>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6, marginBottom: 24 }}>
         {categories.map((cat) => (
@@ -157,9 +167,9 @@ export function FrameworkModal({ open, onClose, categories, fontMono, fontSerif 
         </h3>
         <p style={{ fontSize: 13, color: "#8888aa", lineHeight: 1.7, margin: 0 }}>
           No country is perfect. Every country is a tradeoff between opportunity, stability, culture, freedom, affordability, social
-          warmth, and long-term sustainability. This framework exists to make those tradeoffs visible instead of emotional. Think like
-          an engineer evaluating systems. But also think like a human being who has to wake up there every morning. That balance is
-          where the right answer usually appears.
+          warmth, and long-term sustainability. This framework makes those tradeoffs visible instead of emotional by applying priority
+          penalties and gate rules. Think like an engineer evaluating systems. But also think like a human being who has to wake up there
+          every morning. That balance is where the right answer usually appears.
         </p>
       </div>
     </ModalShell>

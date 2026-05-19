@@ -1,4 +1,6 @@
-import type { CareerField, Category } from "../../types";
+import type { CareerField, Category, CategoryId } from "../../types";
+import { WEIGHT_PROFILES, type WeightProfileId } from "../../data/weight-profiles";
+import { CATEGORIES } from "../../data/categories";
 import { ModalShell } from "../ModalShell";
 
 type SettingsModalProps = {
@@ -11,6 +13,8 @@ type SettingsModalProps = {
   onResetWeights: () => void;
   customWeights: number[];
   onChangeWeight: (index: number, value: number) => void;
+  activeProfileId: WeightProfileId | "custom";
+  onSelectProfile: (id: WeightProfileId) => void;
   fontMono: string;
   fontSerif: string;
 };
@@ -25,12 +29,27 @@ export function SettingsModal({
   onResetWeights,
   customWeights,
   onChangeWeight,
+  activeProfileId,
+  onSelectProfile,
   fontMono,
   fontSerif,
 }: SettingsModalProps) {
   const totalWeight = Math.round(customWeights.reduce((sum, weight) => sum + weight * 100, 0));
   const totalOk = totalWeight === 100;
   const currentField = careerFields.find((field) => field.id === selectedFieldId) || careerFields[0];
+
+  const weightsMatchProfile = (profileId: WeightProfileId) => {
+    const profile = WEIGHT_PROFILES.find((p) => p.id === profileId);
+    if (!profile) return false;
+    return CATEGORIES.every((cat, i) => {
+      const profileWeight = Math.round((profile.weights[cat.id as CategoryId] ?? 0) * 100);
+      const currentWeight = Math.round(customWeights[i] * 100);
+      return profileWeight === currentWeight;
+    });
+  };
+
+  const effectiveProfileId: WeightProfileId | "custom" =
+    activeProfileId !== "custom" && weightsMatchProfile(activeProfileId) ? activeProfileId : "custom";
 
   return (
     <ModalShell open={open} onClose={onClose} maxWidth={900}>
@@ -40,7 +59,7 @@ export function SettingsModal({
             ⚙ Settings & Personalisation
           </h2>
           <p style={{ fontFamily: fontMono, fontSize: 10, color: "#5b5b7d", margin: 0, letterSpacing: 1 }}>
-            ADJUST WEIGHTS · CAREER FIELD · SCORES UPDATE LIVE
+            WEIGHT PROFILES · CAREER FIELD · SCORES UPDATE LIVE
           </p>
         </div>
         <div style={{ display: "flex", gap: 8 }}>
@@ -75,6 +94,58 @@ export function SettingsModal({
           >
             ✕
           </button>
+        </div>
+      </div>
+
+      <div style={{ marginBottom: 28 }}>
+        <div style={{ fontFamily: fontMono, fontSize: 11, color: "#a5b4fc", letterSpacing: 1, marginBottom: 12 }}>
+          WEIGHT PROFILE
+        </div>
+        <p style={{ fontSize: 12, color: "#6b6b8d", margin: "0 0 12px", lineHeight: 1.6 }}>
+          Pick a preset or customise manually. Your config is saved automatically.
+        </p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(200px,1fr))", gap: 8 }}>
+          {WEIGHT_PROFILES.map((profile) => {
+            const isActive = effectiveProfileId === profile.id;
+            return (
+              <button
+                key={profile.id}
+                onClick={() => onSelectProfile(profile.id)}
+                type="button"
+                style={{
+                  fontFamily: fontMono,
+                  fontSize: 11,
+                  padding: "10px 12px",
+                  borderRadius: 8,
+                  textAlign: "left",
+                  cursor: "pointer",
+                  border: isActive ? "1px solid #8b5cf6" : "1px solid #1a1a30",
+                  background: isActive ? "#2e1065" : "#0a0a1e",
+                  color: isActive ? "#c4b5fd" : "#6b6b8d",
+                  transition: "all 0.15s",
+                }}
+              >
+                <div style={{ fontWeight: 700, marginBottom: 4, fontSize: 12 }}>{profile.name}</div>
+                <div style={{ fontSize: 10, opacity: 0.7, lineHeight: 1.4 }}>{profile.tagline}</div>
+              </button>
+            );
+          })}
+          {effectiveProfileId === "custom" && (
+            <div
+              style={{
+                fontFamily: fontMono,
+                fontSize: 11,
+                padding: "10px 12px",
+                borderRadius: 8,
+                border: "1px solid #f59e0b40",
+                background: "#0a0a1e",
+                color: "#f59e0b",
+              }}
+            >
+              <div style={{ fontWeight: 700, marginBottom: 4, fontSize: 12 }}>Custom</div>
+              <div style={{ fontSize: 10, opacity: 0.7, lineHeight: 1.4 }}>Manually adjusted weights</div>
+            </div>
+          )}
         </div>
       </div>
 

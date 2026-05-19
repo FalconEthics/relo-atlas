@@ -1,12 +1,15 @@
+import { Fragment } from "react";
 import type { Category, CategoryId, CareerField, CountryData, CountryScores } from "../types";
-import { scoreColor, scoreTier, weightedScore } from "../utils/score";
+import type { WeightProfile } from "../data/weight-profiles";
+import { scoreBreakdown, scoreColor, scoreTier } from "../utils/score";
 
-type BattleCountry = CountryData & { w: number; es?: CountryScores };
+type BattleCountry = CountryData & { w: number; es?: CountryScores; breakdown?: ReturnType<typeof scoreBreakdown> };
 
 type FinalBattlePanelProps = {
   countries: BattleCountry[];
   categories: Category[];
   customWeights: number[];
+  activeProfile: WeightProfile;
   selectedField: CareerField;
   effectiveScores: (country: CountryData) => CountryScores;
   onOpenDetail: (countryCode: string) => void;
@@ -14,14 +17,12 @@ type FinalBattlePanelProps = {
   fontSerif: string;
 };
 
-const WEAK_THRESHOLD = 5;
 const CONSISTENT_THRESHOLD = 7;
-const PRIORITY_COUNT = 3;
+const PRIORITY_COUNT = 4;
 const PRO_COUNT = 2;
 const DRAWBACK_COUNT = 2;
-const HEAVY_PENALTY = 0.7;
-const SECONDARY_PENALTY = 0.4;
-const CONSISTENCY_BONUS = 0.2;
+const DRAWBACK_THRESHOLD = 6;
+const PRO_THRESHOLD = 8;
 
 const impactLabel = (value: number) => (value >= 0.12 ? "high" : value >= 0.07 ? "moderate" : "low");
 
@@ -29,6 +30,7 @@ export function FinalBattlePanel({
   countries,
   categories,
   customWeights,
+  activeProfile,
   selectedField,
   effectiveScores,
   onOpenDetail,
@@ -97,20 +99,35 @@ export function FinalBattlePanel({
     const drawbackCutoffScore = sortedByWeakness[Math.min(DRAWBACK_COUNT - 1, sortedByWeakness.length - 1)]?.score ?? 0;
     const drawbacks = sortedByWeakness.filter((entry, index) => index < DRAWBACK_COUNT || entry.score === drawbackCutoffScore);
 
-    const weighted = weightedScore(effectiveScores(country), customWeights, categories);
+    const breakdown = scoreBreakdown(effectiveScores(country), customWeights, categories, activeProfile);
 
     return {
       country,
       scores,
       pros,
       drawbacks,
-      weighted,
+      weighted: breakdown.finalScore,
+      breakdown,
     };
   });
 
   const allFiveStrong = categories.filter((cat) =>
     battleCountries.every((entry) => categoryScore(entry.country, cat.id) >= CONSISTENT_THRESHOLD),
   );
+
+  const comparisonMatrix = categories.map((category) => ({
+    category,
+    cells: battleCountries.map((countryEntry) => {
+      const score = categoryScore(countryEntry.country, category.id);
+      const status = score >= PRO_THRESHOLD ? "pro" : score <= DRAWBACK_THRESHOLD ? "weak" : "mid";
+      return {
+        country: countryEntry.country,
+        score,
+        status,
+        text: categoryText(countryEntry.country, category.id, score),
+      };
+    }),
+  }));
 
   const priorityLeaders = topWeightedCategories.map((entry) => {
     const leader = battleCountries
@@ -132,35 +149,11 @@ export function FinalBattlePanel({
     })
     .sort((a, b) => b.spread - a.spread)[0];
 
-  const recommendationScores = battleCountries.map((entry) => {
-    const priorityFit = topWeightedCategories.reduce((total, item) => {
-      const score = categoryScore(entry.country, item.category.id);
-      return total + score * item.weight;
-    }, 0);
-
-    const penalties = topWeightedCategories
-      .filter((item) => categoryScore(entry.country, item.category.id) <= WEAK_THRESHOLD)
-      .reduce((total, item, index) => {
-        const scale = index === 0 ? HEAVY_PENALTY : SECONDARY_PENALTY;
-        return total + item.weight * scale;
-      }, 0);
-
-    const weakCount = entry.scores.filter((score) => score.score <= WEAK_THRESHOLD).length;
-    const consistencyBonus = Math.max(0, (categories.length - weakCount) / categories.length) * CONSISTENCY_BONUS;
-
-    return {
-      entry,
-      priorityFit,
-      penalties,
-      bonus: consistencyBonus,
-      total: priorityFit - penalties + consistencyBonus,
-    };
-  });
-
-  const recommended = [...recommendationScores].sort((a, b) => b.total - a.total)[0];
-  const recommendedCountry = recommended?.entry.country;
+  const recommended = [...battleCountries].sort((a, b) => b.weighted - a.weighted)[0];
+  const recommendedCountry = recommended?.country;
   const priorityLabels = topWeightedCategories.map((item) => item.category.name);
-  const recommendedWeakest = recommended?.entry.drawbacks[0];
+  const recommendedWeakest = recommended?.drawbacks[0];
+  const recommendedBreakdown = recommended?.breakdown;
 
   const recommendationImpact = recommendedWeakest
     ? impactLabel(customWeights[categories.findIndex((cat) => cat.id === recommendedWeakest.id)] ?? 0)
@@ -173,7 +166,7 @@ export function FinalBattlePanel({
           FINAL BATTLE - TOP 5 SHOWDOWN
         </div>
         <p style={{ color: "#8a8aa8", fontSize: 13, margin: "6px 0 0" }}>
-          The top 5 is recalculated live using your current weights, region filter, and career focus.
+          The top 5 is recalculated live using your current weights, region filter, career focus, and priority penalties.
         </p>
       </div>
 
@@ -218,8 +211,8 @@ export function FinalBattlePanel({
               </span>
             </div>
             <div style={{ fontFamily: fontMono, fontSize: 20, color: scoreColor(entry.weighted), fontWeight: 700 }}>
-              {entry.weighted.toFixed(2)}
-              <span style={{ fontSize: 11, color: "#5b5b7d" }}> / 10</span>
+              {entry.weighted.toFixed(1)}
+              <span style={{ fontSize: 11, color: "#5b5b7d" }}> / 100</span>
             </div>
             <div style={{ marginTop: 8, display: "flex", gap: 6, flexWrap: "wrap" }}>
               {entry.pros.map((item) => (
@@ -242,35 +235,66 @@ export function FinalBattlePanel({
         ))}
       </div>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-          gap: 12,
-          marginBottom: 16,
-        }}
-      >
-        {battleCountries.map((entry) => (
-          <div key={`${entry.country.c}-tradeoffs`} style={{ background: "#0d0d22", border: "1px solid #1a1a30", borderRadius: 10, padding: 12 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
-              <span style={{ fontSize: 18 }}>{entry.country.f}</span>
-              <span style={{ fontFamily: fontSerif, fontSize: 16, fontWeight: 700 }}>{entry.country.n}</span>
+      <div style={{ background: "#0d0d22", border: "1px solid #1a1a30", borderRadius: 12, padding: 12, marginBottom: 16 }}>
+        <div style={{ fontFamily: fontMono, fontSize: 10, color: "#a5b4fc", letterSpacing: 1, marginBottom: 10 }}>
+          CATEGORY COMPARISON (ALL SCORES)
+        </div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: `180px repeat(${battleCountries.length}, minmax(220px, 1fr))`,
+            gap: 10,
+          }}
+        >
+          <div />
+          {battleCountries.map((entry) => (
+            <div key={`${entry.country.c}-header`} style={{ display: "flex", alignItems: "center", gap: 6 }}>
+              <span style={{ fontSize: 16 }}>{entry.country.f}</span>
+              <span style={{ fontFamily: fontSerif, fontSize: 14, fontWeight: 700 }}>{entry.country.n}</span>
             </div>
-            <div style={{ fontFamily: fontMono, fontSize: 10, color: "#ef4444", letterSpacing: 1, marginBottom: 6 }}>
-              DRAWBACKS (LOWEST SCORES)
-            </div>
-            <ul style={{ margin: 0, paddingLeft: 16 }}>
-              {entry.drawbacks.map((item, index) => (
-                <li key={item.id} style={{ marginBottom: index === entry.drawbacks.length - 1 ? 0 : 8 }}>
-                  <div style={{ fontFamily: fontMono, fontSize: 11, color: "#6b6b8d", marginBottom: 4 }}>
-                    {item.icon} {item.name} · {item.score}/10
+          ))}
+
+          {comparisonMatrix.map((row) => (
+            <Fragment key={row.category.id}>
+              <div style={{ fontFamily: fontMono, fontSize: 11, color: "#6b6b8d" }}>
+                {row.category.icon} {row.category.name}
+              </div>
+              {row.cells.map((cell) => (
+                <div
+                  key={`${row.category.id}-${cell.country.c}`}
+                  style={{
+                    background: cell.status === "weak" ? "#1a0f16" : cell.status === "pro" ? "#0b2a1a" : "#101028",
+                    border: "1px solid #1a1a30",
+                    borderRadius: 8,
+                    padding: "8px 10px",
+                    minHeight: 54,
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 4 }}>
+                    <span style={{ fontFamily: fontMono, fontSize: 11, color: scoreColor(cell.score) }}>
+                      {cell.score}/10
+                    </span>
+                    {cell.status !== "mid" && (
+                      <span
+                        style={{
+                          fontFamily: fontMono,
+                          fontSize: 9,
+                          color: cell.status === "pro" ? "#22c55e" : "#f87171",
+                          background: cell.status === "pro" ? "#0b2a1a" : "#2a0b1b",
+                          borderRadius: 10,
+                          padding: "2px 6px",
+                        }}
+                      >
+                        {cell.status === "pro" ? "PRO" : "WEAK"}
+                      </span>
+                    )}
                   </div>
-                  <div style={{ fontSize: 12, color: "#8888aa", lineHeight: 1.6 }}>{item.text}</div>
-                </li>
+                  <div style={{ fontSize: 12, color: "#8888aa", lineHeight: 1.5 }}>{cell.text}</div>
+                </div>
               ))}
-            </ul>
-          </div>
-        ))}
+            </Fragment>
+          ))}
+        </div>
       </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 12, marginBottom: 16 }}>
@@ -334,8 +358,8 @@ export function FinalBattlePanel({
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
               <span style={{ fontSize: 22 }}>{recommendedCountry.f}</span>
               <span style={{ fontFamily: fontSerif, fontSize: 20, fontWeight: 700 }}>{recommendedCountry.n}</span>
-              <span style={{ fontFamily: fontMono, fontSize: 12, color: scoreColor(recommended?.entry.weighted ?? 0) }}>
-                {recommended?.entry.weighted.toFixed(2)} / 10
+              <span style={{ fontFamily: fontMono, fontSize: 12, color: scoreColor(recommended?.weighted ?? 0) }}>
+                {recommended?.weighted.toFixed(1)} / 100
               </span>
             </div>
             <div style={{ fontSize: 13, color: "#8a8aa8", lineHeight: 1.7 }}>
@@ -349,10 +373,17 @@ export function FinalBattlePanel({
                   .join(", ") || "No single priority category, but strongest overall blend."}</strong>
               </p>
               {recommendedWeakest ? (
-                <p style={{ margin: 0 }}>
+                <p style={{ margin: "0 0 6px" }}>
                   Main risk: <strong style={{ color: "#fca5a5" }}>{recommendedWeakest.name}</strong> (impact is {recommendationImpact} given your weights).
                 </p>
               ) : null}
+              {recommendedBreakdown && (recommendedBreakdown.priorityPenalty < 0.95 || recommendedBreakdown.gatePenalty < 1 || recommendedBreakdown.tierCap) && (
+                <p style={{ margin: 0 }}>
+                  Ranking adjustments: priority penalty ×{recommendedBreakdown.priorityPenalty.toFixed(2)}
+                  {recommendedBreakdown.gatePenalty < 1 ? `, gate penalty ×${recommendedBreakdown.gatePenalty.toFixed(2)}` : ""}
+                  {recommendedBreakdown.tierCap ? `, capped at tier ${recommendedBreakdown.tierCap}` : ""}.
+                </p>
+              )}
             </div>
           </div>
         ) : (

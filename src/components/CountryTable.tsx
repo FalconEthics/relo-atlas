@@ -1,9 +1,10 @@
 import { Fragment } from "react";
 import type { CareerField, Category, CategoryId, CountryData, CountryScores } from "../types";
+import type { ScoreBreakdown } from "../utils/score";
 import { scoreColor, scoreTier } from "../utils/score";
 import tableStyles from "../styles/app-table.module.css";
 
-type CountryRow = CountryData & { w: number; es?: CountryScores };
+type CountryRow = CountryData & { w: number; es?: CountryScores; breakdown?: ScoreBreakdown };
 
 type CountryTableProps = {
   view: CategoryId | "overall";
@@ -42,7 +43,7 @@ export function CountryTable({
             <th
               style={{ padding: "10px 8px", textAlign: "left", color: "#5b5b7d", fontSize: 10, letterSpacing: 1, width: 220 }}
             >
-              {view === "overall" ? "WEIGHTED SCORE" : activeCategory?.name.toUpperCase()}
+              {view === "overall" ? "FINAL SCORE" : activeCategory?.name.toUpperCase()}
             </th>
             <th style={{ padding: "10px 8px", textAlign: "center", color: "#5b5b7d", fontSize: 10, letterSpacing: 1, width: 60 }}>
               TIER
@@ -100,15 +101,15 @@ export function CountryTable({
                       <div className={tableStyles.barTrack}>
                         <div
                           style={{
-                            width: `${(value / 10) * 100}%`,
+                            width: `${Math.min(100, view === "overall" ? value : value * 10)}%`,
                             background: scoreColor(value),
                           }}
                           className={tableStyles.barFill}
                         />
                       </div>
                       <span style={{ color: scoreColor(value), fontWeight: 700, fontSize: 14 }}>
-                        {view === "overall" ? value.toFixed(2) : value}
-                        <span style={{ fontSize: 10, color: "#4a4a6a" }}>/10</span>
+                        {view === "overall" ? value.toFixed(1) : value}
+                        <span style={{ fontSize: 10, color: "#4a4a6a" }}>{view === "overall" ? "/100" : "/10"}</span>
                       </span>
                     </div>
                   </td>
@@ -133,16 +134,16 @@ export function CountryTable({
                             {isTechView ? `${selectedField.name} Sector` : activeCategory?.name}
                           </span>
                            {categoryScore !== null && (
-                             <span
-                               style={{
-                                 fontFamily: fontMono,
-                                 fontSize: 11,
-                                 color: scoreColor(categoryScore),
-                                 fontWeight: 700,
-                               }}
-                             >
-                               {categoryScore}/10
-                             </span>
+                  <span
+                    style={{
+                      fontFamily: fontMono,
+                      fontSize: 11,
+                      color: scoreColor(categoryScore),
+                      fontWeight: 700,
+                    }}
+                  >
+                    {categoryScore}/10
+                  </span>
                            )}
                           <span style={{ fontFamily: fontMono, fontSize: 10, color: "#4a4a6a" }}>·</span>
                           <span style={{ fontFamily: fontMono, fontSize: 10, color: "#4a4a6a" }}>

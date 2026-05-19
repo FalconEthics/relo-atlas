@@ -76,7 +76,7 @@ export function RankingControls({
           ⚔ FINAL BATTLE
         </button>
         <span style={{ fontFamily: fontMono, fontSize: 10, color: "#4a4a6a" }}>
-          {view === "battle" ? "Top 5 showdown based on your weights" : "Weighted score across all 16 categories"}
+          {view === "battle" ? "Top 5 showdown based on your profile logic" : "Final score with priority penalties and gate rules"}
         </span>
       </div>
 

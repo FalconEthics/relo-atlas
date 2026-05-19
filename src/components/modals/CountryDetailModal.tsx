@@ -1,4 +1,5 @@
 import type { Category, CountryData, CountryScores } from "../../types";
+import type { ScoreBreakdown } from "../../utils/score";
 import { scoreColor, scoreTier } from "../../utils/score";
 import { ModalShell } from "../ModalShell";
 
@@ -6,6 +7,7 @@ type CountryDetailModalProps = {
   open: boolean;
   country: CountryData | null;
   weightedScore: number;
+  scoreBreakdown: ScoreBreakdown | null;
   categories: Category[];
   selectedField: { id: string; name: string; icon: string; desc: string };
   effectiveScores: CountryScores | null;
@@ -20,6 +22,7 @@ export function CountryDetailModal({
   open,
   country,
   weightedScore,
+  scoreBreakdown,
   categories,
   selectedField,
   effectiveScores,
@@ -107,8 +110,8 @@ export function CountryDetailModal({
         </button>
       </div>
       <div style={{ fontFamily: fontMono, fontSize: 24, fontWeight: 700, color: scoreColor(weightedScore) }}>
-        {weightedScore.toFixed(2)}
-        <span style={{ fontSize: 13, color: "#6b6b8d" }}> / 10</span>
+        {weightedScore.toFixed(1)}
+        <span style={{ fontSize: 13, color: "#6b6b8d" }}> / 100</span>
       </div>
       <p style={{ color: "#9999bb", fontSize: 14, lineHeight: 1.65, margin: "8px 0 16px" }}>{country.d.sum}</p>
 
@@ -161,6 +164,89 @@ export function CountryDetailModal({
           );
         })}
       </div>
+
+      {scoreBreakdown && (
+        <div style={{ background: "#0d0d22", border: "1px solid #1a1a30", borderRadius: 8, padding: 14, marginBottom: 8 }}>
+          <div
+            style={{
+              fontFamily: fontMono,
+              fontSize: 11,
+              color: "#38bdf8",
+              letterSpacing: 1,
+              marginBottom: 6,
+              fontWeight: 700,
+            }}
+          >
+            RANKING BREAKDOWN
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginBottom: 10 }}>
+            <div style={{ background: "#101028", border: "1px solid #1a1a30", borderRadius: 6, padding: "8px 10px" }}>
+              <div style={{ fontFamily: fontMono, fontSize: 10, color: "#94a3b8", marginBottom: 4 }}>Base score</div>
+              <div style={{ fontFamily: fontMono, fontSize: 14, color: "#e2e8f0", fontWeight: 700 }}>
+                {scoreBreakdown.baseScore.toFixed(1)} / 100
+              </div>
+            </div>
+            <div style={{ background: "#101028", border: "1px solid #1a1a30", borderRadius: 6, padding: "8px 10px" }}>
+              <div style={{ fontFamily: fontMono, fontSize: 10, color: "#94a3b8", marginBottom: 4 }}>Priority penalty</div>
+              <div style={{ fontFamily: fontMono, fontSize: 14, color: "#fca5a5", fontWeight: 700 }}>
+                × {scoreBreakdown.priorityPenalty.toFixed(3)}
+              </div>
+            </div>
+            <div style={{ background: "#101028", border: "1px solid #1a1a30", borderRadius: 6, padding: "8px 10px" }}>
+              <div style={{ fontFamily: fontMono, fontSize: 10, color: "#94a3b8", marginBottom: 4 }}>Gate penalty</div>
+              <div style={{ fontFamily: fontMono, fontSize: 14, color: "#fbbf24", fontWeight: 700 }}>
+                × {scoreBreakdown.gatePenalty.toFixed(3)}
+              </div>
+            </div>
+            <div style={{ background: "#101028", border: "1px solid #1a1a30", borderRadius: 6, padding: "8px 10px" }}>
+              <div style={{ fontFamily: fontMono, fontSize: 10, color: "#94a3b8", marginBottom: 4 }}>Final score</div>
+              <div style={{ fontFamily: fontMono, fontSize: 14, color: "#a5b4fc", fontWeight: 700 }}>
+                {scoreBreakdown.finalScore.toFixed(1)} / 100
+              </div>
+            </div>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+            <div style={{ fontFamily: fontMono, fontSize: 10, color: "#a5b4fc" }}>Priority penalties</div>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+              {scoreBreakdown.priorities.map((item) => (
+                <span
+                  key={item.id}
+                  style={{
+                    fontFamily: fontMono,
+                    fontSize: 10,
+                    color: item.penalty < 0.9 ? "#f87171" : "#cbd5f5",
+                    background: "#101028",
+                    border: "1px solid #1a1a30",
+                    borderRadius: 12,
+                    padding: "2px 8px",
+                  }}
+                >
+                  {categories.find((cat) => cat.id === item.id)?.name ?? item.id}: {item.score}/10 → {item.penalty.toFixed(2)}
+                </span>
+              ))}
+            </div>
+            {scoreBreakdown.gateImpacts.length > 0 && (
+              <>
+                <div style={{ fontFamily: fontMono, fontSize: 10, color: "#f59e0b", marginTop: 6 }}>Gate impacts</div>
+                <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+                  {scoreBreakdown.gateImpacts.map((impact) => (
+                    <div key={`${impact.rule.id}-${impact.rule.minScore}`} style={{ fontSize: 12, color: "#fca5a5" }}>
+                      {categories.find((cat) => cat.id === impact.rule.id)?.name ?? impact.rule.id} {impact.score}/10 —
+                      {impact.appliedCap ? ` capped at ${impact.appliedCap}` : ""}
+                      {impact.penaltyMultiplier !== 1 ? ` ×${impact.penaltyMultiplier.toFixed(2)}` : ""}
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+            {scoreBreakdown.tierCap && (
+              <div style={{ fontFamily: fontMono, fontSize: 10, color: "#f59e0b" }}>
+                Tier capped at {scoreBreakdown.tierCap}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       <div style={{ background: "#0d0d22", border: "1px solid #1a1a30", borderRadius: 8, padding: 14, marginBottom: 8 }}>
         <div
