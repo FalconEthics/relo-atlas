@@ -50,7 +50,10 @@ export function FinalBattlePanel({
 
   const categoryText = (country: CountryData, id: CategoryId, score: number) => {
     if (id === "tech") {
-      return `Tech sector score for ${country.n}: ${score}/10. ${CAREER_FIELDS[0].desc}`;
+      const note = CAREER_FIELDS[0].notes?.[country.c];
+      return note
+        ? `${country.n} — Tech sector: ${score}/10. ${note}`
+        : `Tech sector score for ${country.n}: ${score}/10. ${CAREER_FIELDS[0].desc}`;
     }
     const baseText = country.d[id];
     return id === "immi" ? stripParentNotes(baseText) : baseText;

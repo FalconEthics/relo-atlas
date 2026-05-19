@@ -46,7 +46,10 @@ export function CountryDetailModal({
 
   const categoryText = (id: Category["id"], score: number) => {
     if (id === "tech") {
-      return `Tech sector score for ${country.n}: ${score}/10. ${CAREER_FIELDS[0].desc}`;
+      const note = CAREER_FIELDS[0].notes?.[country.c];
+      return note
+        ? `${country.n} — Tech sector: ${score}/10. ${note}`
+        : `Tech sector score for ${country.n}: ${score}/10. ${CAREER_FIELDS[0].desc}`;
     }
     const baseText = country.d[id];
     return id === "immi" ? stripParentNotes(baseText) : baseText;
@@ -119,7 +122,12 @@ export function CountryDetailModal({
           const openNote = catNote === cat.id;
           const noteText =
             cat.id === "tech"
-              ? `Tech sector score for ${country.n}: ${value}/10. ${CAREER_FIELDS[0].desc}`
+              ? (() => {
+                  const note = CAREER_FIELDS[0].notes?.[country.c];
+                  return note
+                    ? `${country.n} — Tech sector: ${value}/10. ${note}`
+                    : `Tech sector score for ${country.n}: ${value}/10. ${CAREER_FIELDS[0].desc}`;
+                })()
               : country.d[cat.id];
 
           return (
