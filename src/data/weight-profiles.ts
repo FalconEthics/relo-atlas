@@ -106,11 +106,6 @@ export const SETTLER_GATES: GateRule[] = [
   },
 ];
 
-const BASE_PROFILE_SETTINGS = {
-  priorityPenaltyCurve: DEFAULT_PRIORITY_PENALTY_CURVE,
-  gates: DEFAULT_GATES,
-};
-
 export const WEIGHT_PROFILES: WeightProfile[] = [
   {
     id: "mik",
