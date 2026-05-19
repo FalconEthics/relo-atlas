@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { CAREER_FIELDS } from "../data/career-fields";
-import type { Category, CategoryId, CountryData, CountryScores } from "../types";
+import type { Category, CategoryId, CountryData, CountryScores, ScoringConfig } from "../types";
 import type { WeightProfile } from "../data/weight-profiles";
 import { scoreBreakdown, scoreColor, scoreTier } from "../utils/score";
 
@@ -12,6 +12,7 @@ type FinalBattlePanelProps = {
   customWeights: number[];
   activeProfile: WeightProfile;
   effectiveScores: (country: CountryData) => CountryScores;
+  scoringConfig?: ScoringConfig | null;
   onOpenDetail: (countryCode: string) => void;
   fontMono: string;
   fontSerif: string;
@@ -32,6 +33,7 @@ export function FinalBattlePanel({
   customWeights,
   activeProfile,
   effectiveScores,
+  scoringConfig,
   onOpenDetail,
   fontMono,
   fontSerif,
@@ -97,7 +99,7 @@ export function FinalBattlePanel({
     const drawbackCutoffScore = sortedByWeakness[Math.min(DRAWBACK_COUNT - 1, sortedByWeakness.length - 1)]?.score ?? 0;
     const drawbacks = sortedByWeakness.filter((entry, index) => index < DRAWBACK_COUNT || entry.score === drawbackCutoffScore);
 
-    const breakdown = scoreBreakdown(effectiveScores(country), customWeights, categories, activeProfile);
+    const breakdown = scoreBreakdown(effectiveScores(country), customWeights, categories, activeProfile, scoringConfig);
 
     return {
       country,

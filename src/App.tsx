@@ -15,7 +15,7 @@ import { COUNTRIES } from "./data/countries";
 import { WEIGHT_PROFILES, type WeightProfileId } from "./data/weight-profiles";
 import { useLocalStorageFlag } from "./hooks/useLocalStorageFlag";
 import { scoreBreakdown } from "./utils/score";
-import type { CategoryId, CountryData, CountryScores, RegionFilter } from "./types";
+import type { CategoryId, CountryData, CountryScores, RegionFilter, ScoringConfig } from "./types";
 import styles from "./styles/app.module.css";
 
 const FONT_SANS = "'DM Sans', system-ui, sans-serif";
@@ -27,6 +27,7 @@ const STORAGE_KEYS = {
   weights: "reloatlas_weights",
   profile: "reloatlas_weight_profile",
   region: "reloatlas_region",
+  scoringConfig: "reloatlas_scoring_config",
 };
 
 function loadStoredWeights(): { weights: number[]; profileId: WeightProfileId | "custom" } {
@@ -77,6 +78,18 @@ function loadStoredRegion(): RegionFilter {
   return "All";
 }
 
+function loadStoredScoringConfig(): ScoringConfig | null {
+  try {
+    const stored = localStorage.getItem(STORAGE_KEYS.scoringConfig);
+    if (stored) {
+      return JSON.parse(stored) as ScoringConfig;
+    }
+  } catch {
+    // Ignore storage errors.
+  }
+  return null;
+}
+
 type ViewMode = CategoryId | "overall" | "battle";
 
 export default function App() {
@@ -91,6 +104,8 @@ export default function App() {
   const [customWeights, setCustomWeights] = useState(initialWeights.weights);
   const [activeProfileId, setActiveProfileId] = useState<WeightProfileId | "custom">(initialWeights.profileId);
   const [showSources, setShowSources] = useState<CategoryId | null>(null);
+  const initialScoringConfig = loadStoredScoringConfig();
+  const [scoringConfig, setScoringConfig] = useState<ScoringConfig | null>(initialScoringConfig);
 
   useLocalStorageFlag(STORAGE_KEYS.configured, () => {
     setTimeout(() => setShowSettings(true), 400);
@@ -121,6 +136,14 @@ export default function App() {
     }
   }, [region]);
 
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEYS.scoringConfig, JSON.stringify(scoringConfig));
+    } catch {
+      // Ignore storage errors.
+    }
+  }, [scoringConfig]);
+
   const activeCategory = CATEGORIES.find((category) => category.id === view);
   const activeProfile = WEIGHT_PROFILES.find((profile) => profile.id === activeProfileId) || WEIGHT_PROFILES[0];
   const isOverallView = view === "overall" || view === "battle";
@@ -133,7 +156,7 @@ export default function App() {
   const sorted = useMemo(() => {
     let list = COUNTRIES.map((country) => {
       const scores = effectiveScores(country);
-      const breakdown = scoreBreakdown(scores, customWeights, CATEGORIES, activeProfile);
+      const breakdown = scoreBreakdown(scores, customWeights, CATEGORIES, activeProfile, scoringConfig);
       return { ...country, es: scores, w: breakdown.finalScore, breakdown };
     });
 
@@ -144,14 +167,14 @@ export default function App() {
     list.sort((a, b) => (isOverallView ? b.w - a.w : (b.es?.[view] ?? 0) - (a.es?.[view] ?? 0)));
 
     return list;
-  }, [view, region, customWeights, isOverallView, activeProfile]);
+  }, [view, region, customWeights, scoringConfig, isOverallView, activeProfile]);
 
   const topFive = sorted.slice(0, 5);
 
   const selectedData = selectedCountry ? COUNTRIES.find((country) => country.c === selectedCountry) || null : null;
-  const selectedScore = selectedData ? scoreBreakdown(effectiveScores(selectedData), customWeights, CATEGORIES, activeProfile).finalScore : 0;
+  const selectedScore = selectedData ? scoreBreakdown(effectiveScores(selectedData), customWeights, CATEGORIES, activeProfile, scoringConfig).finalScore : 0;
   const selectedEffective = selectedData ? effectiveScores(selectedData) : null;
-  const selectedBreakdown = selectedData ? scoreBreakdown(effectiveScores(selectedData), customWeights, CATEGORIES, activeProfile) : null;
+  const selectedBreakdown = selectedData ? scoreBreakdown(effectiveScores(selectedData), customWeights, CATEGORIES, activeProfile, scoringConfig) : null;
 
   const applyProfile = (profileId: WeightProfileId) => {
     const profile = WEIGHT_PROFILES.find((p) => p.id === profileId);
@@ -159,6 +182,7 @@ export default function App() {
     const newWeights = CATEGORIES.map((cat) => profile.weights[cat.id] ?? cat.w);
     setCustomWeights(newWeights);
     setActiveProfileId(profileId);
+    setScoringConfig(null);
   };
 
   const updateCustomWeights = (nextWeights: number[]) => {
@@ -222,6 +246,7 @@ export default function App() {
           customWeights={customWeights}
           activeProfile={activeProfile}
           effectiveScores={effectiveScores}
+          scoringConfig={scoringConfig}
           onOpenDetail={(countryCode) => {
             setSelectedCountry(countryCode);
             setCatNote(null);
@@ -257,11 +282,13 @@ export default function App() {
           }
         }}
         categories={CATEGORIES}
+        activeProfile={activeProfile}
         onResetWeights={() => {
           applyProfile("mik");
           try {
             localStorage.removeItem(STORAGE_KEYS.weights);
             localStorage.removeItem(STORAGE_KEYS.profile);
+            localStorage.removeItem(STORAGE_KEYS.scoringConfig);
           } catch {
             // Ignore storage errors.
           }
@@ -274,6 +301,11 @@ export default function App() {
         }}
         activeProfileId={activeProfileId}
         onSelectProfile={applyProfile}
+        scoringConfig={scoringConfig}
+        onChangeScoringConfig={(config: ScoringConfig | null) => {
+          setScoringConfig(config);
+          if (config) setActiveProfileId("custom");
+        }}
         fontMono={FONT_MONO}
         fontSerif={FONT_SERIF}
       />

@@ -1,29 +1,26 @@
-import type { Category, CountryScores } from "../types";
-import type { GateRule, PenaltyCurve, ScoreTier, WeightProfile } from "../data/weight-profiles";
+import type { Category, CountryScores, GateRule, PenaltyCurve, ScoreTier, ScoringConfig } from "../types";
+import type { WeightProfile } from "../data/weight-profiles";
 import { DEFAULT_PRIORITY_PENALTY_CURVE } from "../data/weight-profiles";
 
 export const weightedScore = (scores: CountryScores, weights: number[], categories: Category[]): number =>
   categories.reduce((total, category, index) => total + (scores[category.id] || 0) * weights[index], 0);
 
 export const scoreColor = (value: number): string => {
-  const normalized = value <= 10 ? value * 10 : value;
-  return normalized >= 80 ? "#22c55e" : normalized >= 60 ? "#eab308" : normalized >= 40 ? "#f97316" : "#ef4444";
+  return value >= 80 ? "#22c55e" : value >= 60 ? "#eab308" : value >= 40 ? "#f97316" : "#ef4444";
 };
 
 export const scoreTier = (value: number): [ScoreTier, string] =>
   value <= 0
     ? ["E", "#ef4444"]
-    : value <= 10
-      ? scoreTier(value * 10)
-      : value >= 60
-        ? ["A", "#22c55e"]
-        : value >= 54
-          ? ["B", "#3b82f6"]
-          : value >= 48
-            ? ["C", "#eab308"]
-            : value >= 40
-              ? ["D", "#f97316"]
-              : ["E", "#ef4444"];
+    : value >= 55
+      ? ["A", "#22c55e"]
+      : value >= 49
+        ? ["B", "#3b82f6"]
+        : value >= 43
+          ? ["C", "#eab308"]
+          : value >= 37
+            ? ["D", "#f97316"]
+            : ["E", "#ef4444"];
 
 export type GateImpact = {
   rule: GateRule;
@@ -60,10 +57,10 @@ const clampTier = (current: ScoreTier, cap: ScoreTier): ScoreTier =>
 
 const tierScoreCeiling: Record<ScoreTier, number> = {
   A: 100,
-  B: 59.99,
-  C: 53.99,
-  D: 47.99,
-  E: 39.99,
+  B: 54.99,
+  C: 48.99,
+  D: 42.99,
+  E: 36.99,
 };
 
 const applyTierCap = (score: number, cap?: ScoreTier): number => {
@@ -76,17 +73,24 @@ export const scoreBreakdown = (
   weights: number[],
   categories: Category[],
   profile: WeightProfile,
+  config?: ScoringConfig | null,
 ): ScoreBreakdown => {
   const baseScore = weightedScore(scores, weights, categories) * 10;
-  const curve = profile.priorityPenaltyCurve ?? DEFAULT_PRIORITY_PENALTY_CURVE;
+  const curve = config?.penaltyCurve ?? profile.priorityPenaltyCurve ?? DEFAULT_PRIORITY_PENALTY_CURVE;
 
-  const priorityIds = profile.priorities && profile.priorities.length > 0
-    ? profile.priorities
-    : [...categories]
-        .map((cat, index) => ({ cat, weight: weights[index] }))
-        .sort((a, b) => b.weight - a.weight)
-        .slice(0, 4)
-        .map((entry) => entry.cat.id);
+  const priorityCount = config?.priorityCount ?? 4;
+  let priorityIds: Category["id"][];
+  if (config?.priorities && config.priorities !== "auto") {
+    priorityIds = config.priorities;
+  } else if (profile.priorities && profile.priorities.length > 0) {
+    priorityIds = profile.priorities;
+  } else {
+    priorityIds = [...categories]
+      .map((cat, index) => ({ cat, weight: weights[index] }))
+      .sort((a, b) => b.weight - a.weight)
+      .slice(0, priorityCount)
+      .map((entry) => entry.cat.id);
+  }
 
   const priorities = priorityIds.map((id) => {
     const score = scores[id] ?? 0;
@@ -94,11 +98,12 @@ export const scoreBreakdown = (
   });
 
   const priorityPenaltyRaw = priorities.reduce((total, item) => total * item.penalty, 1);
-  const priorityPenalty = profile.priorityPenaltyPower
-    ? Math.pow(priorityPenaltyRaw, profile.priorityPenaltyPower)
+  const penaltyPower = config?.penaltyPower ?? profile.priorityPenaltyPower;
+  const priorityPenalty = penaltyPower !== undefined
+    ? Math.pow(priorityPenaltyRaw, penaltyPower)
     : priorityPenaltyRaw;
 
-  const gates = profile.gates ?? [];
+  const gates = config?.gates ?? profile.gates ?? [];
   let gatePenalty = 1;
   let tierCap: ScoreTier | undefined;
   const gateImpacts: GateImpact[] = [];

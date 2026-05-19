@@ -16,6 +16,18 @@ export type CategoryId =
   | "edu"
   | "history";
 
+export type ScoreTier = "A" | "B" | "C" | "D" | "E";
+
+export type PenaltyCurve = Record<number, number>;
+
+export type GateRule = {
+  id: CategoryId;
+  minScore: number;
+  penaltyMultiplier?: number;
+  capTier?: ScoreTier;
+  label?: string;
+};
+
 export type Region =
   | "Europe"
   | "Asia"
@@ -128,6 +140,14 @@ export type CareerField = {
   desc: string;
   scores: Partial<Record<CountryCode, number>>;
   notes?: Partial<Record<CountryCode, string>>;
+};
+
+export type ScoringConfig = {
+  gates: GateRule[] | null;
+  priorities: CategoryId[] | "auto" | null;
+  priorityCount: number;
+  penaltyCurve: PenaltyCurve | null;
+  penaltyPower: number;
 };
 
 export type Source = {
