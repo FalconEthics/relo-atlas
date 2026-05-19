@@ -2971,53 +2971,53 @@ export const COUNTRIES: CountryData[] = [
     n: "Israel",
     r: "Middle East",
     s: {
-      career: 8,
+      career: 5,
       tech: 9,
-      social: 8,
+      social: 4,
       stability: 4,
-      lifestyle: 8,
+      lifestyle: 5,
       terrain: 7,
       safety: 4,
-      urban: 8,
-      health: 9,
+      urban: 5,
+      health: 6,
       env: 7,
       housing: 3,
-      gov: 7,
-      values: 7,
+      gov: 3,
+      values: 3,
       immi: 4,
-      edu: 8,
+      edu: 6,
       history: 10,
     },
     d: {
       career:
-        "Start-Up Nation is not marketing — Israel has more Nasdaq-listed companies than any country outside the US and China; venture capital per capita is world-leading. Cybersecurity (Check Point, Palo Alto origins), defence tech, and agritech are global leaders. Salaries in tech are competitive with Western Europe.",
+        "The 'Start-Up Nation' tech sector exists alongside severe broader economic inequality. The dual economy leaves large segments of the population behind, and recent geopolitical isolation threatens foreign investment and broader economic growth.",
       tech: "One of the world's densest tech ecosystems per capita — approximately 1 startup per 1,400 people. Cybersecurity, agricultural technology (drip irrigation innovation), water recycling, medical device innovation, and AI research are globally recognised strengths. Scored near US benchmark levels.",
       social:
-        "Tel Aviv is famously vibrant — beaches, restaurants, LGBTQ-friendly nightlife, and an intensely intellectual café culture. Israeli directness (chutzpah) takes adjustment but reflects genuine engagement. Shabbat (Friday sunset to Saturday night) partially quiets the country weekly.",
+        "Social cohesion is heavily fragmented. While internal communities can be tight-knit, severe ethnic, religious, and political divisions create an exclusionary environment for outsiders and minorities, undermining broader societal friendliness.",
       stability:
         "The Gaza war (October 2023-ongoing) and Hezbollah confrontation represent the most significant security escalation in decades. Regional tensions with Iran create an existential security overlay that no amount of domestic progress fully resolves. Internal political polarisation over judicial reform has additionally stressed democratic cohesion.",
       lifestyle:
-        "Tel Aviv beach lifestyle, Galilean wine country, Dead Sea floating, Negev desert stargazing, Eilat diving, and Jerusalem's spiritual intensity — genuinely world-class variety in a tiny country. Mediterranean cuisine is outstanding; street food (falafel, shawarma, hummus) is a daily pleasure.",
+        "Daily life is heavily overshadowed by geopolitical conflict, security stresses, and the increasing intrusion of religious mandates into public life. The secular Mediterranean lifestyle of Tel Aviv is increasingly isolated amidst broader national tensions.",
       terrain:
         "Negev desert (60% of country), Galilee hills, Mediterranean coastal plain, Jordan Rift Valley (Dead Sea, lowest point on earth), and Golan Heights — remarkable geographic variety for a country the size of Wales.",
       safety:
         "The Gaza war and associated rocket fire, Hezbollah threats from Lebanon, and Iran's direct missile attack (April 2024 — first direct attack on Israeli territory) have materially elevated physical risk. Iron Dome provides significant protection but the security environment is genuinely dangerous by objective measure.",
       urban:
-        "Tel Aviv-Yafo is a world-class city — excellent restaurant density, Bauhaus White City UNESCO architecture, active beach promenade, and a functional light rail (recently launched). Jerusalem is one of the world's most historically overwhelming urban experiences.",
+        "Urban planning is highly uneven. While Tel Aviv has modern infrastructure, broader development is marred by extreme density, severe traffic congestion, and stark infrastructure disparities between different ethnic and religious municipalities.",
       health:
-        "Universal healthcare (Clalit, Maccabi, Meuhedet, Leumit sick funds) is consistently ranked among the world's top 5–10 systems — comprehensive, accessible, and technologically advanced. Israeli medical research (Weizmann Institute) contributes significantly to global medicine.",
+        "While possessing advanced medical technology, the healthcare system faces severe strain from ongoing conflicts, resource misallocation, and growing inequality in access between the centre and the periphery.",
       env: "Water recycling technology (85% of wastewater recycled — world's highest rate), drip irrigation pioneer, and significant solar deployment make Israel a tech environmental leader. Desert restoration (3 billion trees planted over decades) is genuine. Regional geopolitical water tensions with Jordan and Palestinian territories are a long-term concern.",
       housing:
         "Tel Aviv is among the world's most expensive cities for housing — price-to-income ratios are extreme even by London or Sydney standards. Jerusalem is slightly more affordable; peripheral cities (Beersheba, Haifa) significantly so. Housing affordability is the most cited domestic quality-of-life complaint.",
-      gov: "Vibrant parliamentary democracy; Netanyahu's judicial overhaul (2023) caused the largest civilian protest movement in Israeli history, demonstrating democratic health. Courts ultimately asserted independence. Coalition instability is structural; the Supreme Court's independence is a contested battleground.",
+      gov: "Governance under recent administrations (Netanyahu) has been marked by extreme polarization, controversial judicial reforms, and democratic backsliding. International condemnation and deep internal divisions severely compromise institutional stability.",
       values:
-        "Tel Aviv is one of the world's most LGBTQ-friendly cities — annual Pride is among the largest globally, and antidiscrimination protections are strong. However, religious conservatives in government push back; secular-Orthodox tension is a defining domestic fault line. Arab Israeli citizens (20% of population) face complex integration dynamics.",
+        "Deeply polarized. The increasing influence of ultra-Orthodox political factions creates significant friction regarding secular freedoms, women's roles, and civil rights. The society is heavily fractured along religious and ethnic lines.",
       immi: "Law of Return provides immediate citizenship for Jews worldwide — the most significant immigration policy, but exclusive by definition. For non-Jews, immigration pathways are extremely limited; economic migration is not encouraged. Spouses of citizens have a pathway; otherwise options are rare.",
-      edu: "Hebrew University of Jerusalem, Technion, and Weizmann Institute are globally ranked in hard sciences. Tel Aviv University is strong in medicine and social sciences. Israeli academic research output per capita is among the world's highest. Universities are Hebrew-medium but many graduate courses offered in English.",
+      edu: "The education system is highly segregated along religious and ethnic lines. While elite tech institutions exist, the broader system suffers from vast disparities and the growing dominance of non-core religious curricula in some sectors.",
       history:
         "Among the world's most historically significant geographies — ancient Canaan, the Israelite kingdoms, the Temple Mount, the Crusades, Ottoman Palestine, and the Zionist movement converging on the 20th century's most contested sovereignty claim. Jerusalem's religious significance to Judaism, Christianity, and Islam is without parallel.",
-      sum: "Israel is Start-Up Nation with a Mediterranean lifestyle and universal healthcare — a compelling package for tech professionals and Jews with aliyah eligibility — fundamentally complicated by an ongoing military conflict and one of the world's most severe housing crises.",
-      deal: "The security situation (ongoing Gaza war, Hezbollah threat, Iranian hostility) is not a background risk but an active, present conflict; Tel Aviv housing costs are a structural economic problem; and immigration is effectively closed to non-Jews without exceptional pathways.",
+      sum: "A highly polarized nation facing severe geopolitical conflict, democratic backsliding, and deep internal religious and ethnic divisions that overshadow its historical and technological assets.",
+      deal: "Ongoing military conflict, extreme political and religious polarization, democratic backsliding, and exclusionary social dynamics make it a highly volatile and challenging environment for relocation.",
       parent:
         "For Jewish immigrants (olim), parents can obtain tourist visas extended to one year and eventually apply for aliyah themselves under the Law of Return if eligible. Non-Jewish family members of Israeli citizens can apply for a spouse/family visa; parents of citizens without Jewish eligibility face more limited options and typically rely on tourist visa renewals (90-day Schengen-style extensions).",
     },
