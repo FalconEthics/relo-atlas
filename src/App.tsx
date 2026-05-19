@@ -67,7 +67,21 @@ function loadStoredField(): CareerFieldId {
 function loadStoredRegion(): RegionFilter {
   try {
     const stored = localStorage.getItem(STORAGE_KEYS.region);
-    if (stored && (stored === "All" || stored === "Europe" || stored === "Asia" || stored === "Oceania" || stored === "N. America")) {
+    if (
+      stored &&
+      (
+        stored === "All" ||
+        stored === "Europe" ||
+        stored === "Asia" ||
+        stored === "Oceania" ||
+        stored === "N. America" ||
+        stored === "S. America" ||
+        stored === "Africa" ||
+        stored === "Middle East" ||
+        stored === "Caribbean" ||
+        stored === "Central America"
+      )
+    ) {
       return stored as RegionFilter;
     }
   } catch {

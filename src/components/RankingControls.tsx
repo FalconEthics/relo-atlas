@@ -113,7 +113,20 @@ export function RankingControls({
       </div>
 
       <div style={{ display: "flex", gap: 6, marginBottom: 16 }}>
-        {(["All", "Europe", "N. America", "Oceania", "Asia"] as const).map((filter) => (
+        {(
+          [
+            "All",
+            "Europe",
+            "N. America",
+            "S. America",
+            "Central America",
+            "Caribbean",
+            "Africa",
+            "Middle East",
+            "Oceania",
+            "Asia",
+          ] as const
+        ).map((filter) => (
           <button
             key={filter}
             onClick={() => onChangeRegion(filter)}

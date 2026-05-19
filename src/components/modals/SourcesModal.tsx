@@ -40,7 +40,7 @@ export function SourcesModal({
             {headingLabel} — Data Sources
           </h3>
           <p style={{ fontFamily: fontMono, fontSize: 10, color: "#5b5b7d", margin: 0, letterSpacing: 1 }}>
-            SOURCES USED TO SCORE THIS CATEGORY ACROSS ALL 26 COUNTRIES
+            SOURCES USED TO SCORE THIS CATEGORY ACROSS ALL 64 COUNTRIES
           </p>
         </div>
         <button

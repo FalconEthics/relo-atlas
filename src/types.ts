@@ -16,7 +16,16 @@ export type CategoryId =
   | "edu"
   | "history";
 
-export type Region = "Europe" | "Asia" | "Oceania" | "N. America";
+export type Region =
+  | "Europe"
+  | "Asia"
+  | "Oceania"
+  | "N. America"
+  | "S. America"
+  | "Africa"
+  | "Middle East"
+  | "Caribbean"
+  | "Central America";
 
 export type RegionFilter = Region | "All";
 
@@ -46,7 +55,45 @@ export type CountryCode =
   | "SE"
   | "AT"
   | "IT"
-  | "KR";
+  | "KR"
+  | "GR"
+  | "HU"
+  | "RO"
+  | "BG"
+  | "SI"
+  | "HR"
+  | "TW"
+  | "MY"
+  | "TH"
+  | "VN"
+  | "IN"
+  | "MX"
+  | "BR"
+  | "AR"
+  | "CL"
+  | "UY"
+  | "CO"
+  | "PE"
+  | "ZA"
+  | "MA"
+  | "TN"
+  | "KE"
+  | "MU"
+  | "AE"
+  | "QA"
+  | "SA"
+  | "IL"
+  | "TR"
+  | "OM"
+  | "DO"
+  | "BB"
+  | "BS"
+  | "JM"
+  | "TT"
+  | "CR"
+  | "PA"
+  | "GT"
+  | "SV";
 
 export type CareerFieldId =
   | "technology"
@@ -79,7 +126,7 @@ export type CareerField = {
   name: string;
   icon: string;
   desc: string;
-  scores: Record<CountryCode, number>;
+  scores: Partial<Record<CountryCode, number>>;
   notes?: Partial<Record<CountryCode, string>>;
 };
 

@@ -10,7 +10,7 @@ export function Header({ onShowFramework, onShowSettings }: HeaderProps) {
     <header className={styles.pageHeader}>
       <h1 className={styles.title}>Relo Atlas</h1>
       <p className={styles.subtitle}>Find your next home. Scored by data, not feelings.</p>
-      <p className={styles.tagline}>26 COUNTRIES · 16 CATEGORIES · FULLY PERSONALISED · MAY 2026</p>
+      <p className={styles.tagline}>64 COUNTRIES · 16 CATEGORIES · FULLY PERSONALISED · MAY 2026</p>
       <div className={styles.headerActions}>
         <button className={styles.ghostButton} onClick={onShowFramework} type="button">
           📋 Research Framework & Methodology
