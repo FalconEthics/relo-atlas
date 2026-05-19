@@ -1,4 +1,4 @@
-import type { CareerFieldId, Category, CategoryId } from "../../types";
+import type { Category, CategoryId } from "../../types";
 import { AI_NOTE } from "../../data/notes";
 import { FIELD_SOURCES, SOURCES } from "../../data/sources";
 import { ModalShell } from "../ModalShell";
@@ -8,8 +8,6 @@ type SourcesModalProps = {
   onClose: () => void;
   categories: Category[];
   activeCategoryId: CategoryId | null;
-  sourcesField: CareerFieldId | null;
-  sourcesFieldLabel?: string | null;
   fontMono: string;
   fontSerif: string;
 };
@@ -19,8 +17,6 @@ export function SourcesModal({
   onClose,
   categories,
   activeCategoryId,
-  sourcesField,
-  sourcesFieldLabel,
   fontMono,
   fontSerif,
 }: SourcesModalProps) {
@@ -28,8 +24,8 @@ export function SourcesModal({
 
   const category = categories.find((cat) => cat.id === activeCategoryId);
   const isField = activeCategoryId === "tech";
-  const fieldSources = isField ? FIELD_SOURCES[sourcesField || "technology"] : SOURCES[activeCategoryId] || [];
-  const headingLabel = isField ? `${sourcesFieldLabel || "Technology"} Sector` : category?.name;
+  const fieldSources = isField ? FIELD_SOURCES.technology : SOURCES[activeCategoryId] || [];
+  const headingLabel = isField ? "Tech Sector" : category?.name;
 
   return (
     <ModalShell open={open} onClose={onClose} maxWidth={720} zIndex={3000}>

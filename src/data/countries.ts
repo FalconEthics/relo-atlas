@@ -8,7 +8,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Asia",
     s: {
       career: 9,
-      tech: 8,
       social: 5,
       stability: 8,
       lifestyle: 6,
@@ -27,7 +26,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "SGD 113K median SWE comp. FAANG APAC HQ density unmatched (Google, Meta, Stripe, ByteDance, Shopee). Zero capital gains tax. Strong demand for senior engineers across fintech, govtech, and consumer tech.",
-      tech: "Google, Meta, Stripe, ByteDance, Shopee, Sea, GovTech all headquartered or major offices. APAC hub depth is elite, but the absolute market size and comp ceiling sit below London/Zurich and job-switching breadth is narrower.",
       social:
         "Singapore is cosmopolitan on paper but socially stratified in practice. Expats and locals tend to inhabit parallel social worlds — you will have no shortage of international community, but building genuine friendships with locals is genuinely hard. Singaporeans are polite and functional but not warm in the Irish or Australian sense. InterNations ranks Singapore mid-tier for social life. The city's diversity is real but tends toward transactional multiculturalism rather than organic social openness.",
       stability:
@@ -65,7 +63,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 9,
-      tech: 8,
       social: 4,
       stability: 9,
       lifestyle: 7,
@@ -84,7 +81,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "FAANG Zurich packages CHF 200-300K+. Zug/Schwyz cantonal tax arbitrage to ~22% effective. Pharma, finance, precision engineering all strong. Highest purchasing power globally.",
-      tech: "Google Zurich (largest office outside US), Meta, Apple, Microsoft, IBM Research. Elite compensation and engineering culture with top-tier European comp benchmarks; startup scene smaller than London but far more lucrative.",
       social:
         "MIPEX 50 (halfway-unfavourable). Swiss-German dialect impenetrable for outsiders. 'Swiss don't make friends after 30' — statistically supported by InterNations data. Social wall is real and structural.",
       stability:
@@ -122,7 +118,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 6,
-      tech: 6,
       social: 5,
       stability: 10,
       lifestyle: 7,
@@ -141,7 +136,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Strong wages but small market. NOK 650-900K senior SWE (~€55-76K). Oil-backed economy provides cushion. Limited employer options — lose your job in Oslo, very limited fallbacks.",
-      tech: "Small but growing. Cognite (industrial AI), Aker, Schibsted, some fintech. No FAANG offices. Remote for international companies increasingly common. Market depth is the real weakness.",
       social:
         "Polite but reserved. 'Norwegian bubble' well-documented in expat surveys. Takes 2-4 years to build genuine social circles. Better than Sweden/Finland but still Nordic-cold for outsiders.",
       stability:
@@ -179,7 +173,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Oceania",
     s: {
       career: 8,
-      tech: 7,
       social: 7,
       stability: 7,
       lifestyle: 9,
@@ -198,7 +191,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Senior AUD 150-200K base. Atlassian, Canva, FAANG-Sydney pay well. Strong mining/finance economy provides breadth. Good purchasing power outside Sydney/Melbourne.",
-      tech: "Atlassian, Canva, SafetyCulture, Culture Amp, FAANG offices. Growing startup ecosystem. Sydney/Melbourne concentrated. Market depth improving but behind US/UK/Singapore in absolute terms.",
       social:
         "Australians are genuinely warm by global standards — not a stereotype, consistently validated by InterNations data (top 10 for friendliness). 'No worries' is a real cultural default, not a marketing line. Strangers talk to each other. Pub and BBQ culture actively pulls people together. Immigrants find it easier to form actual friendships here than in most developed countries. The documented rise in anti-immigration political sentiment is real but hasn't yet translated into cold daily social interactions for most immigrants.",
       stability:
@@ -236,7 +228,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 6,
-      tech: 6,
       social: 5,
       stability: 6,
       lifestyle: 8,
@@ -255,7 +246,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Senior SWE CZK 1.45-1.83M (~€58-73K). 30-40% lower CoL than Germany means strong purchasing power. Growing market with improving employer options. Good savings potential.",
-      tech: "Pure Storage, IBM, JetBrains (Czech-founded), Avast, Red Hat, Oracle offices. Decent depth for CEE. Prague becoming a legitimate tech hub. Remote work for Western companies very common.",
       social:
         "Czechs reserved initially but warm up faster than Nordics/DACH. Beer culture (most per capita globally) genuinely helps socializing. Limited Indian community but growing. Manageable integration.",
       stability:
@@ -293,7 +283,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 6,
-      tech: 7,
       social: 5,
       stability: 6,
       lifestyle: 7,
@@ -312,7 +301,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "B2B + IP-Box 5% tax setup makes net savings punch far above nominal salary. Engineers consistently report saving more in Warsaw than Berlin. 650K+ developers — largest CEE market by headcount.",
-      tech: "Largest CEE tech market. Google Warsaw, Microsoft, Samsung R&D, Allegro (Polish Amazon), CD Projekt Red. Strong outsourcing hub evolving into product companies. Deep talent pool and hiring demand.",
       social:
         "Polish people in daily life are actually quite warm and hospitable — 'Polish hospitality' is a real cultural trait, especially once you're in someone's home or social circle. The 5 reflects this genuine warmth balanced against documented nationalist political culture (60K-person Independence Day marches), MIPEX 40 (lowest in EU), and some incidents of racial hostility. In tech-hub Warsaw and Kraków the day-to-day experience is generally fine. The risk is not malicious coldness but occasional overt nationalism that breaks through.",
       stability:
@@ -350,7 +338,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Oceania",
     s: {
       career: 5,
-      tech: 4,
       social: 8,
       stability: 7,
       lifestyle: 9,
@@ -369,7 +356,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Senior SWE NZD 180-200K cap (~USD 105-117K). Xero is the apex employer. No FAANG offices. Very small market. Career ceiling is real and hard. Best for remote workers on overseas salaries.",
-      tech: "Xero (founded here), Datacom, Vista, some SaaS startups. Very shallow market. No FAANG presence. Career ceiling hits fast for ambitious engineers. Remote work for overseas companies is the viable play.",
       social:
         "Welcoming Kiwi culture. Māori integration model creates genuinely inclusive national identity. Multicultural. Indian community ~5% and growing. Kiwis are naturally friendly and approachable.",
       stability:
@@ -407,7 +393,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Asia",
     s: {
       career: 4,
-      tech: 6,
       social: 3,
       stability: 5,
       lifestyle: 5,
@@ -426,7 +411,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Work culture is notoriously toxic — 'karoshi' (death by overwork) is a recognized social phenomenon. Rigid hierarchy, mandatory after-work drinking (nomikai), and expectation of unpaid overtime make the professional environment exhausting. Efficiency is often low despite long hours; presenteeism rules over output. Salaries have stagnated for decades while costs rise.",
-      tech: "Google, Amazon, Meta Tokyo offices. Rakuten, Mercari, LINE/Yahoo Japan. Growing startup scene. Engineering culture improving from traditional low-comp model. FAANG raising the salary bar locally.",
       social:
         "Polite but socially distant. 'Gaijin bubble' well-documented in expat literature. Japanese language essential for real integration and friendship. Indian community very small. Cultural distance significant.",
       stability:
@@ -464,7 +448,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 6,
-      tech: 4,
       social: 4,
       stability: 8,
       lifestyle: 8,
@@ -483,7 +466,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Moderate SWE salaries (€50-75K senior). Small market overall. Nokia legacy fading. Gaming companies (Supercell, Rovio) are standouts. Remote work for international companies common and culturally accepted.",
-      tech: "Supercell, Rovio, Wolt (DoorDash acquired), Nokia. Smallest Nordic job market for tech. Helsinki startup scene growing. Silo AI notable for European AI. Market depth limited overall.",
       social:
         "Finland scores the lowest of any Nordic country here for a reason — the 'Finnish nightmare' memes about sitting at opposite ends of bus benches exist because they're accurate. Social isolation for immigrants is not just well-documented, it's a recognised national issue that Finnish authorities actively discuss. The introversion is cultural and structural, not hostile — Finns are not cold or xenophobic, they're just wired for independence and minimal social obligation. The practical outcome for immigrants is the same: years of functional but shallow social life before anything breaks through.",
       stability:
@@ -521,7 +503,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 6,
-      tech: 6,
       social: 5,
       stability: 8,
       lifestyle: 8,
@@ -540,7 +521,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Highest Nordic salaries with no employee social-security contributions — best net take-home in Nordics. Strong economy. Flexicurity labor model (easy to fire, strong safety net). Novo Nordisk + tech.",
-      tech: "Zendesk, Maersk digital, Unity Copenhagen, Novo Nordisk tech division. Growing scene. Not large but quality senior roles available. Copenhagen becoming a genuine hub for healthtech/greentech.",
       social:
         "MIPEX 49 — lowest of all Nordics, deliberately restrictionist. Danes famously hard to befriend outside work. Hygge is an insider cultural concept. Most restrictionist Nordic integration policy by design.",
       stability:
@@ -578,7 +558,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 7,
-      tech: 7,
       social: 4,
       stability: 6,
       lifestyle: 7,
@@ -597,7 +576,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Largest EU economy. Senior SWE €70-100K base. Excellent benefits (30 days vacation, strong labor protections, unlimited sick leave). Auto/consulting/fintech/industrial-tech. Solid but not high-comp vs US/CH/SG.",
-      tech: "Largest EU tech market by headcount. SAP, Siemens, Zalando, N26, Trade Republic, FAANG offices (Munich/Berlin). Deep market with good career progression paths. Engineering culture and rigor is strong.",
       social:
         "InterNations Expat Insider 2024: ranked 49/51 for local friendliness, 52/53 for cultural welcomeness — worst major economy. AfD polling 20-23%. DeZIM 2024: documented housing discrimination against non-German names.",
       stability:
@@ -635,7 +613,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 8,
-      tech: 8,
       social: 8,
       stability: 7,
       lifestyle: 7,
@@ -654,7 +631,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "European tech compensation ceiling. Stripe Dublin median total comp €278K. Google Dublin senior ~€245K. Apple Cork. US-tech pay levels at European tax rates. Pharma also very strong.",
-      tech: "Every major US tech company has EMEA HQ in Ireland (Google, Meta, Apple, Stripe, Salesforce, LinkedIn, X, TikTok). Deepest EMEA tech market by senior compensation. Best tech market in EU for pay.",
       social:
         "The Irish are among the most genuinely friendly people in the developed world — this is not a tourism-board claim, it's consistently validated by InterNations, Expat Insider, and every qualitative measure. Strangers talk to you in queues, in pubs, on buses. The craic is a real social lubricant. Immigrants describe Ireland as one of the few places where you can build actual friendships within months rather than years. Low xenophobia in daily life. The welcoming attitude extends across nationalities and backgrounds.",
       stability:
@@ -692,7 +668,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 7,
-      tech: 7,
       social: 5,
       stability: 7,
       lifestyle: 8,
@@ -711,7 +686,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Strong tech ecosystem compensation. Booking.com, Adyen, ASML, Optiver, Flow Traders, Uber Amsterdam. 30% ruling (now compressed to 27% from 2027). Good salaries overall. Trading/fintech culture strong.",
-      tech: "Booking.com, Adyen, ASML (monopolist), Optiver, Flow Traders, Uber, Netflix Amsterdam. Deep quantitative/fintech scene. Good engineering culture. Strong ecosystem particularly for trading/infra engineers.",
       social:
         "Dutch directness can feel warm or cold depending on interpretation. Very international in Amsterdam. PVV won 2023 — anti-immigrant sentiment rising politically. InterNations friendliness rankings declining for NL.",
       stability:
@@ -749,7 +723,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 7,
-      tech: 5,
       social: 5,
       stability: 8,
       lifestyle: 7,
@@ -768,7 +741,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Fintech/finance hub with Belgium-plus pay scales. High gross salaries. Small market — limited employer switching. EU institutions provide some roles. Niche but well-compensated.",
-      tech: "Amazon Luxembourg (EU operations), PayPal, some fintech startups. Very small market. More finance-tech than pure engineering. Limited career depth for pure SWEs. Niche opportunity.",
       social:
         "Very international — 47% foreign-born population (highest in EU). Multilingual daily life (French/German/Luxembourgish). Relatively welcoming due to diversity being the norm. Small-town feel despite capital status.",
       stability:
@@ -806,7 +778,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 8,
-      tech: 8,
       social: 6,
       stability: 7,
       lifestyle: 6,
@@ -825,7 +796,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Largest English-speaking European tech market. London senior SWE £70-120K+ base. Finance + tech intersection very strong. Deep market with excellent career progression across many sub-sectors.",
-      tech: "DeepMind, ARM, Revolut, Wise, Monzo, Starling, FAANG London offices. Deepest English-speaking tech market outside the US, with London comp benchmarks now at the European top tier alongside Zurich.",
       social:
         "British reserve is real and well-documented — InterNations ranks the UK around 30th for friendliness, and expats consistently report feeling lonely despite the country being diverse and multicultural. Londoners are famously closed-off in public spaces. That said, English politeness does make the reserve easier to deal with and motivates people to put in time and effort, compared with the straight-off coldness and reserve you feel in some other European countries. Once you're in a social circle (work, pub, sport), British people can be warm and loyal friends. The issue is penetrating the initial reserve — which takes longer here than in Ireland, Australia, or Canada. Multicultural and tolerant, yes. Warm on first contact, no.",
       stability:
@@ -863,7 +833,6 @@ export const COUNTRIES: CountryData[] = [
     r: "N. America",
     s: {
       career: 5,
-      tech: 6,
       social: 7,
       stability: 7,
       lifestyle: 6,
@@ -882,7 +851,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "SWE comp 40-50% of US levels (CAD 100-150K senior). Toronto/Vancouver concentrated. Good labor protections. Growing market but compensation ceiling much lower than US/UK/Singapore.",
-      tech: "Shopify, Wealthsimple, Cohere (AI), FAANG offices (Toronto/Vancouver/Montreal). Growing AI hub (Geoffrey Hinton legacy, Vector Institute). Market improving year-on-year but still behind US in depth and comp.",
       social:
         "The Canadian friendliness stereotype is accurate — it's backed by data. InterNations consistently ranks Canada in the top 10 for ease of settling in and making friends. Strangers are approachable, multicultural policy creates a genuine culture of openness, and immigrants describe social integration as meaningfully easier than in Europe. The political anti-immigration rhetoric (real and growing) has not yet translated into cold daily social experiences for most immigrants in major cities. One of the friendliest developed countries by any broad measure.",
       stability:
@@ -920,7 +888,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 5,
-      tech: 5,
       social: 5,
       stability: 6,
       lifestyle: 6,
@@ -939,7 +906,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Lower salaries (€40-60K senior SWE). Small market. e-Residency ecosystem is innovative but niche. Bolt, Pipedrive local anchors. Growing but limited overall career depth.",
-      tech: "Bolt (ride-hailing), Pipedrive (CRM), Veriff (identity). Startup-per-capita leader globally. Small but remarkably innovative. e-Residency creates unique digital-native ecosystem. Market depth very limited though.",
       social:
         "Reserved Baltic culture, similar to Nordic reserve. Small Indian community. Russian minority (25%) creates complex social dynamics. Integration improving but small-country dynamics can be insular.",
       stability:
@@ -977,7 +943,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 4,
-      tech: 4,
       social: 7,
       stability: 6,
       lifestyle: 9,
@@ -996,7 +961,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "SWE pay €40-55K — lowest in Western Europe. Net purchasing power after Lisbon rent is mediocre despite low CoL on paper. Growing market with improving ecosystem but low absolute ceiling.",
-      tech: "Growing startup scene (Web Summit host city since 2016). Farfetch (founded here), Talkdesk (started here). Digital nomad hub attracting remote workers. Shallow market compared to rest of Western Europe.",
       social:
         "MIPEX 81 — best immigrant integration policy in entire EU. Goan-origin PM António Costa served 2015-2023. ~98K Indian community with Goan historical connection. Warmest social welcome in Europe by data and experience.",
       stability:
@@ -1034,7 +998,6 @@ export const COUNTRIES: CountryData[] = [
     r: "N. America",
     s: {
       career: 10,
-      tech: 10,
       social: 5,
       stability: 5,
       lifestyle: 7,
@@ -1053,7 +1016,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Median SWE total comp ~$191K (Levels.fyi). FAANG seniors $400K+ with stock. Unmatched globally by enormous margin. Deep market across every tech sub-sector. Career ceiling is effectively infinite.",
-      tech: "Silicon Valley, Seattle, NYC, Austin, Boston, LA. Every major tech company. AI frontier (OpenAI, Anthropic, Google DeepMind, Meta FAIR). Deepest engineering market on Earth. Unmatched for career ambition.",
       social:
         "Americans are superficially among the most approachable people on Earth — easy to start conversations, quick to smile, openly curious about strangers. In diverse cities (NYC, SF, Austin, Chicago) social integration for immigrants is genuinely easy at the surface level. The caveat is the 'acquaintance culture' — Americans are warm quickly but deep friendships can take longer than they appear to. Regionally very different: coastal cities welcoming and open, rural/deep South more insular. Overall one of the easier places to feel socially comfortable as a newcomer, despite political polarization.",
       stability:
@@ -1091,7 +1053,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 5,
-      tech: 5,
       social: 7,
       stability: 6,
       lifestyle: 9,
@@ -1110,7 +1071,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Moderate SWE salaries (€40-60K senior). Barcelona tech scene growing with 1,900+ startups. Beckham Law tax regime helps for first 6 years. Limited career ceiling vs Northern Europe.",
-      tech: "Barcelona: Glovo, Typeform, Factorial, Travelperk. Madrid growing. 1,900+ startups across both cities. Moderate depth. Remote work popular among expats. Not deep enough for pure career maximizers.",
       social:
         "Warm and genuinely social culture — easiest in Europe to make friends through bars, sports, social gatherings. Expat integration better than Northern/Central Europe. Limited Indian community. Spanish language important.",
       stability:
@@ -1148,7 +1108,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 6,
-      tech: 6,
       social: 4,
       stability: 6,
       lifestyle: 9,
@@ -1167,7 +1126,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Moderate SWE salaries (€50-75K senior). Paris tech growing (Station F — world's largest startup campus). Good employee benefits (35hr week, RTT days). Limited high-comp roles vs UK/Switzerland.",
-      tech: "BlaBlaCar, Datadog (French-founded), OVH, Dassault Systemes. Paris Station F accelerator. Growing but behind UK and Germany in absolute market depth. AI investment (Mistral) strong and state-backed.",
       social:
         "French can be warm once you break through cultural barrier. Language proficiency is the key — integration correlates almost perfectly with French fluency. Indian community small. Secular society values integration.",
       stability:
@@ -1205,7 +1163,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 6,
-      tech: 5,
       social: 5,
       stability: 6,
       lifestyle: 7,
@@ -1224,7 +1181,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Moderate gross salaries but highest OECD tax wedge at 52.7% crushes net income. Brussels as EU capital provides niche institutional/consulting roles. Good benefits but take-home disappointing.",
-      tech: "Collibra, Showpad are standouts. Brussels has EU-tech/policy-tech niche. Limited pure engineering market depth. More consulting/policy-oriented tech than product engineering. Shallow for ambitious SWEs.",
       social:
         "MIPEX 70 — good integration policy framework. Multicultural Brussels (37% foreign-born). Friendly in Flanders after warming period, warmer in French-speaking Wallonia. Reasonable social experience overall.",
       stability:
@@ -1262,7 +1218,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 7,
-      tech: 7,
       social: 5,
       stability: 7,
       lifestyle: 7,
@@ -1281,7 +1236,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Good SWE salaries (SEK 55-75K/month senior ~€4,800-6,500). Stockholm tech ecosystem genuinely strong. Good career progression in engineering-first companies. Reasonable take-home after tax.",
-      tech: "Stockholm: Spotify, Klarna, King (Candy Crush), iZettle, Mojang (Minecraft). Remarkable unicorn factory per capita. Strong engineering culture and product thinking. Solid market depth for a Nordic country.",
       social:
         "Swedish reserve (lagom culture) is well-documented and genuine. Takes years to penetrate closed social circles. Indian community very small. Documented social isolation for immigrants across all surveys.",
       stability:
@@ -1319,7 +1273,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 6,
-      tech: 5,
       social: 5,
       stability: 7,
       lifestyle: 8,
@@ -1338,7 +1291,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Moderate SWE salaries (€50-70K senior). Vienna fintech growing (Bitpanda, Runtastic). Limited tech market depth. Good quality of life compensates somewhat. Smaller market than Germany overall.",
-      tech: "Limited tech ecosystem. Bitpanda, Runtastic (acquired by Adidas), some fintech. Most engineers work for German companies or remote. Vienna growing slowly as secondary tech hub. Shallow market overall.",
       social:
         "Austrian reserve similar to Swiss — polite but distant initially. Vienna is internationally diverse. Rural areas notably less welcoming. Limited Indian community. FPÖ victory signals social climate concern for non-Europeans.",
       stability:
@@ -1376,7 +1328,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 4,
-      tech: 3,
       social: 6,
       stability: 4,
       lifestyle: 9,
@@ -1395,7 +1346,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Worst senior SWE pay in Western Europe (~€40-60K). Limited growth opportunities. Brain drain severe — 550K Italians aged 18-34 emigrated between 2011-2023. Weak underlying economy.",
-      tech: "Very shallow ecosystem. No significant homegrown tech companies. Some Milan presence (Amazon Italy, small startups). Engineering culture weak by any European standard. Career dead-end for ambitious SWEs.",
       social:
         "Warm and genuinely social culture. Family-oriented society. Easy to connect through food, local life, neighborhood. Some racism in smaller cities/south. Indian community small but growing. Regional variation significant.",
       stability:
@@ -1433,7 +1383,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Asia",
     s: {
       career: 6,
-      tech: 6,
       social: 3,
       stability: 4,
       lifestyle: 6,
@@ -1452,7 +1401,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Coupang, Krafton, Samsung, LG, Naver salaries decent for Asia. Chaebol-dominated economy. Work culture brutal (long hours, hierarchy, drinking culture). Limited opportunity for non-Korean speakers outside chaebols.",
-      tech: "Samsung, LG, Naver, Kakao, Coupang, Krafton. Strong domestic tech market. But chaebol culture means hierarchical, long-hours engineering environment. Korean language essential for non-FAANG roles.",
       social:
         "Ethnic-nationalist culture deeply embedded. Hostile social environment for non-Korean settlers (documented in multiple expat surveys). Korean language essential for basic daily life. Indian community tiny. Severe social isolation.",
       stability:
@@ -1490,7 +1438,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 4,
-      tech: 4,
       social: 7,
       stability: 5,
       lifestyle: 8,
@@ -1509,7 +1456,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Persistent ~10% unemployment and a domestic economy heavily reliant on tourism and shipping leaves few high-paying professional roles. EU membership opens the broader labour market but Greek-based opportunities remain scarce, especially in knowledge industries.",
-      tech: "Athens has a nascent but growing startup scene, supported by EU Cohesion Funds and a young technical talent pool. Ecosystem remains small compared to Western European peers; most ambitious tech workers emigrate during the brain-drain years and are only slowly returning.",
       social:
         "Exceptionally warm Mediterranean hospitality anchored around communal meals, coffee culture, and extended family networks. English widely spoken in cities and tourist areas; expats integrate reasonably easily, especially in Athens, Thessaloniki, and the islands.",
       stability:
@@ -1547,7 +1493,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 5,
-      tech: 5,
       social: 6,
       stability: 5,
       lifestyle: 7,
@@ -1566,7 +1511,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Manufacturing (automotive: Audi, Mercedes, BMW all have plants) and a growing IT outsourcing sector provide employment, but wages remain significantly below Western European levels. EU single market access is the key career multiplier.",
-      tech: "Budapest has a functional tech and startup ecosystem, with companies like LogMeIn and Prezi having roots here. Outsourcing hub for Western Europe; engineering talent is strong but often emigrates for better pay.",
       social:
         "Hungarians have a reputation for reserve with strangers but genuine warmth once trust is established. Budapest has a vibrant bar and ruin-pub scene; expat communities are active and well-organised.",
       stability:
@@ -1604,7 +1548,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 5,
-      tech: 6,
       social: 6,
       stability: 5,
       lifestyle: 6,
@@ -1623,7 +1566,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Bucharest is an emerging nearshore tech and business hub with competitive salaries in IT; however, the broader economy outside the capital is underdeveloped. Brain drain remains significant as skilled workers move to Western Europe.",
-      tech: "Romania produces strong engineering talent and has attracted outsourcing operations from major multinationals. Cluj-Napoca is a growing tech city rivalling Bucharest; the sector benefits from low costs and high English proficiency.",
       social:
         "Latin-rooted culture with genuine warmth and hospitality once initial reserve is overcome. Expat communities in Bucharest and Cluj are active; English proficiency among young professionals is high.",
       stability:
@@ -1661,7 +1603,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 4,
-      tech: 5,
       social: 6,
       stability: 4,
       lifestyle: 6,
@@ -1680,7 +1621,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "One of the EU's poorest economies with high emigration rates; the domestic job market is limited outside Sofia's IT sector. EU single market access is the primary career lever, and many Bulgarians commute virtually to Western employers.",
-      tech: "Sofia has a growing IT outsourcing and software development sector with low costs attracting Western clients. Startup ecosystem is small but maturing; English proficiency among tech workers is solid.",
       social:
         "Bulgarians are generally reserved with strangers but warm and hospitable once trust is established. Expat communities in Sofia are modest but active; the Bulgarian head-shake for yes/no inversion is a genuine adjustment.",
       stability:
@@ -1718,7 +1658,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 6,
-      tech: 6,
       social: 7,
       stability: 8,
       lifestyle: 8,
@@ -1737,7 +1676,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Slovenia has a small but stable EU economy with above-average regional wages; key sectors are manufacturing, pharmaceuticals (Krka), and tourism. EU single market access and proximity to Austria and Italy significantly expand career scope.",
-      tech: "A small but quality-focused tech ecosystem; Ljubljana has a growing startup scene and engineering talent pool. Outfit7 (Talking Tom) is a notable success story. Market size limits scale but quality-of-hire is high.",
       social:
         "Slovenians are warm but reserved; outdoor culture (hiking, skiing, cycling) is the great social lubricant. Ljubljana is compact and walkable with a lively student and café culture; English proficiency among young people is excellent.",
       stability:
@@ -1775,7 +1713,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Europe",
     s: {
       career: 5,
-      tech: 5,
       social: 8,
       stability: 7,
       lifestyle: 9,
@@ -1794,7 +1731,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Heavily tourism-dependent economy with seasonal employment peaks; professional opportunities outside Zagreb are limited. EU accession (2013) and Eurozone entry (2023) have gradually attracted more foreign investment and nearshore operations.",
-      tech: "Zagreb has a small but emerging tech scene; Infobip (unicorn) is the flagship success story. Cost competitiveness is attracting some outsourcing, but ecosystem scale remains limited by the small population (3.9m).",
       social:
         "Dalmatians are legendary for warmth and hospitality; café culture and the korzo (evening promenade) are deeply embedded. Expats on the coast integrate naturally; Zagreb has a more reserved urban character.",
       stability:
@@ -1832,7 +1768,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Asia",
     s: {
       career: 8,
-      tech: 9,
       social: 6,
       stability: 4,
       lifestyle: 5,
@@ -1851,7 +1786,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Work culture is notoriously intense — 12-hour days are common, and the '996' schedule (9am to 9pm, 6 days a week) is widespread in tech and manufacturing. Presenteeism is deeply embedded; leaving before your boss is frowned upon. Burnout and stress-related health issues are endemic. Despite TSMC's global dominance, the average professional experience is gruelling compared to Western markets.",
-      tech: "Global semiconductor superpower — TSMC, MediaTek, and ASUS are headquartered here. Tech infrastructure is world-class: 5G penetration, gigabit internet everywhere, and a deep engineering talent pool. Scored near Singapore levels (estimate).",
       social:
         "Taiwanese people are genuinely warm and friendly, but the punishing work schedule leaves little room for social life. Weekends are often spent recovering or catching up on work. The culture is welcoming in theory, but the time and energy for social connection are severely constrained by professional demands.",
       stability:
@@ -1889,7 +1823,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Asia",
     s: {
       career: 6,
-      tech: 6,
       social: 7,
       stability: 6,
       lifestyle: 8,
@@ -1908,7 +1841,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Kuala Lumpur functions as a genuine regional hub — English-speaking, well-connected, and home to significant multinational operations. The MM2H programme and low corporate taxes attract businesses; tech and financial services salaries are competitive for the region.",
-      tech: "Cyberjaya was purpose-built as Malaysia's Silicon Valley; KL's Bangsar South and TRX districts house significant tech operations. Regional outsourcing hub with growing fintech (Grab, AirAsia Digital) and growing local startup ecosystem.",
       social:
         "Remarkable multicultural society — Malay, Chinese, Indian, and indigenous communities coexist in a genuinely unique way. English is a practical first language in business and daily life; expat communities are large and well-established.",
       stability:
@@ -1946,7 +1878,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Asia",
     s: {
       career: 5,
-      tech: 5,
       social: 8,
       stability: 5,
       lifestyle: 9,
@@ -1965,7 +1896,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Work permit system historically restrictive for foreigners in most professions; Thailand Reserve Occupations list limits many roles for non-Thais. Tourism and digital nomad economy dominate foreigner income; the LTR visa now opens more formal pathways.",
-      tech: "Bangkok's tech and startup scene is growing — dtac, True, and AIS digital units alongside growing fintech. Government DEPA agency is driving digitisation. Strong digital nomad community but limited formal tech employment for foreigners.",
       social:
         "The 'Land of Smiles' is more than marketing — Thai warmth and hospitality are genuine and deep-rooted. Buddhist values emphasise non-confrontation and tolerance; expat communities are among Asia's largest and most established.",
       stability:
@@ -2003,7 +1933,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Asia",
     s: {
       career: 5,
-      tech: 6,
       social: 7,
       stability: 7,
       lifestyle: 8,
@@ -2022,7 +1951,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Manufacturing hub (Samsung, Intel, Nike production) and growing tech outsourcing offer employment, but most formal professional roles require Vietnamese language proficiency. English-medium roles exist in international companies and education.",
-      tech: "Vietnam's tech sector is growing rapidly — VNG, VinSmart, and Momo are local success stories; outsourcing to Vietnam (particularly for Japanese clients) is growing. The government is actively promoting tech as a development pillar through smart city initiatives.",
       social:
         "Vietnamese people are genuinely curious and warm toward foreigners, with an energetic street culture — sidewalk coffee, banh mi, and pho define social life. Expat communities in Ho Chi Minh City and Hanoi are large and well-established.",
       stability:
@@ -2060,7 +1988,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Asia",
     s: {
       career: 6,
-      tech: 7,
       social: 7,
       stability: 6,
       lifestyle: 6,
@@ -2079,7 +2006,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "World's third-largest startup ecosystem by count; Bangalore, Hyderabad, and Pune are major global tech hubs. Salary growth in tech has been significant, though inequality is stark — top-tier IT salaries coexist with a vast informal economy.",
-      tech: "Bangalore is the Silicon Valley of Asia — Infosys, Wipro, and over 12,000 tech startups alongside Google, Amazon, and Microsoft R&D centres. IIT/IIM talent pipeline is globally competitive; the UPI payments infrastructure is a genuine world innovation leader.",
       social:
         "Extraordinary diversity — 1.4 billion people, 22 official languages, thousands of dialects. Indian hospitality (atithi devo bhava — 'guest is god') is deeply cultural. Social fabric is rich and complex; urban and rural social experiences diverge radically.",
       stability:
@@ -2117,7 +2043,6 @@ export const COUNTRIES: CountryData[] = [
     r: "N. America",
     s: {
       career: 5,
-      tech: 6,
       social: 9,
       stability: 4,
       lifestyle: 9,
@@ -2136,7 +2061,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Near-shoring boom driven by US-China trade tensions is creating significant professional opportunities, particularly in manufacturing, logistics, and tech in Monterrey and CDMX. Formal employment for non-Spanish speakers remains limited outside multinational context.",
-      tech: "Mexico City's Roma-Condesa-Polanco corridor is a thriving digital hub with a growing startup ecosystem; Kavak (used cars unicorn) and Clip (fintech) are local successes. Monterrey is the industrial-tech hub; Guadalajara is 'Mexico's Silicon Valley' with strong maquiladora tech ties.",
       social:
         "Among the world's most genuinely warm and festive cultures — Día de los Muertos, family-centred celebrations, taquiza culture, and an instinct for hospitality that is deeply embedded. Expat communities in CDMX, Oaxaca, and San Miguel are large and integrated.",
       stability:
@@ -2174,7 +2098,6 @@ export const COUNTRIES: CountryData[] = [
     r: "S. America",
     s: {
       career: 5,
-      tech: 6,
       social: 9,
       stability: 4,
       lifestyle: 8,
@@ -2193,7 +2116,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Latin America's largest economy with significant professional opportunities in São Paulo's financial and tech sectors. Bureaucratic complexity, labour regulations, and Portuguese language requirements make entry difficult; however Nubank, iFood, and a vibrant fintech scene indicate the market's dynamism.",
-      tech: "São Paulo-Campinas corridor hosts a genuine tech ecosystem with multiple unicorns (Nubank, Ifood, Totvs); INPE (space research) and Embraer represent deep tech capability. Startup Brazil has government backing; digital payments infrastructure (PIX) is world-leading.",
       social:
         "Arguably the world's most socially vibrant culture — Carnival, samba, forró, beach culture, and an infectious warmth toward strangers. The concept of 'jeitinho brasileiro' (finding a way) reflects a creative social adaptability unique to Brazilian culture.",
       stability:
@@ -2231,7 +2153,6 @@ export const COUNTRIES: CountryData[] = [
     r: "S. America",
     s: {
       career: 4,
-      tech: 6,
       social: 8,
       stability: 3,
       lifestyle: 8,
@@ -2250,7 +2171,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Economy in deep structural crisis — peso devaluation, capital controls, and serial IMF negotiations make formal employment extremely difficult for long-term planning. However, USD-earning remote workers find Argentina extraordinarily affordable; blue-chip tech talent exports are significant.",
-      tech: "Strong engineering talent pool — MercadoLibre (Latin America's largest e-commerce/fintech) is headquartered here. Numerous tech unicorns and a growing startup scene; peso weakness makes Argentine developers among the most cost-competitive globally for remote work.",
       social:
         "Porteños (Buenos Aires residents) are passionate, intellectually engaged, and socially vibrant — tango, asado culture, and café-centric social life make BA one of the world's great social cities. Strong Italian and Spanish cultural DNA gives a distinctly European feel.",
       stability:
@@ -2288,7 +2208,6 @@ export const COUNTRIES: CountryData[] = [
     r: "S. America",
     s: {
       career: 6,
-      tech: 6,
       social: 7,
       stability: 8,
       lifestyle: 7,
@@ -2307,7 +2226,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Most stable economy in South America — copper wealth and an orthodox economic framework attract multinationals; Santiago has professional opportunities across mining, finance, and tech. CORFO actively supports entrepreneurship and startup investment.",
-      tech: "Santiago's Sanhattan district is growing as a tech hub; StartupChile (government-backed accelerator) has launched 1,500+ companies from 70+ countries. Digital penetration is the highest in Latin America; Cornershop and NotCo are Chilean success stories.",
       social:
         "Chileans are more reserved than their South American peers on initial contact but deeply loyal and warm once trust is established. Santiago has a sophisticated urban culture; regional identities (Chilote, Atacameño) add diversity to the national character.",
       stability:
@@ -2345,7 +2263,6 @@ export const COUNTRIES: CountryData[] = [
     r: "S. America",
     s: {
       career: 5,
-      tech: 6,
       social: 8,
       stability: 9,
       lifestyle: 8,
@@ -2364,7 +2281,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Small economy (3.5 million people) limits professional opportunities; however, Montevideo's tech sector is outperforming its size with companies like dLocal (payments unicorn) and PedidosYa. Uruguay's stability and tax framework attract regional headquarters.",
-      tech: "Uruguay has the highest per-capita tech startup rate in Latin America (estimate). Strong digital infrastructure — highest internet penetration in the region. Parque Tecnológico del LATU and Zonamerica free-trade zone attract tech investment disproportionate to size.",
       social:
         "Warm, progressive, and unusually open — Uruguayans have a European-influenced social culture that is more reserved than Brazil but deeply hospitable. Montevideo's bar and asado culture is central to social life; the country's small size means genuine community connections.",
       stability:
@@ -2402,7 +2318,6 @@ export const COUNTRIES: CountryData[] = [
     r: "S. America",
     s: {
       career: 5,
-      tech: 6,
       social: 9,
       stability: 5,
       lifestyle: 8,
@@ -2421,7 +2336,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Bogotá and Medellín are growing as regional business hubs — Rappi (super-app unicorn) and emerging tech sector provide opportunities. Digital nomad economy is substantial; near-shoring growth is accelerating. Local formal employment for foreigners is limited without Spanish.",
-      tech: "Medellín's transformation from most dangerous city to 'most innovative city' (Urban Land Institute, 2013) is reflected in its growing tech ecosystem. Ruta N innovation centre, ProColombia tech promotion, and a young engineering talent pool are genuine assets.",
       social:
         "Colombians are among the world's warmest, most vibrant people — salsa culture, café culture, and an enthusiasm for life that survived decades of conflict and emerged more resilient. Medellín's paisa culture and cartagena's costeño warmth are distinctly flavoured hospitality.",
       stability:
@@ -2459,7 +2373,6 @@ export const COUNTRIES: CountryData[] = [
     r: "S. America",
     s: {
       career: 4,
-      tech: 5,
       social: 7,
       stability: 4,
       lifestyle: 7,
@@ -2478,7 +2391,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Lima has a professional service economy but opportunities for non-Spanish speakers are limited. Mining sector (copper, gold, silver) dominates GDP; tech scene in Lima is growing but small. Significant economic inequality means the top-tier professional market is narrow.",
-      tech: "Lima's tech startup scene is growing — Culqi (fintech), Rextie, and a growing number of e-commerce platforms indicate momentum. Government digital ID and payment reforms are progressing; regional hub status is developing (estimate).",
       social:
         "Peruvians are warm and proud of their culture — particularly their cuisine, which has achieved global recognition. Lima's Miraflores and Barranco districts have a vibrant café and bar culture; Andean communities maintain deep traditional social structures.",
       stability:
@@ -2516,7 +2428,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Africa",
     s: {
       career: 6,
-      tech: 6,
       social: 7,
       stability: 5,
       lifestyle: 8,
@@ -2535,7 +2446,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Africa's most sophisticated economy — Johannesburg is the continent's financial capital; Cape Town is a growing tech hub ('Silicon Cape'); Durban is a major logistics node. English-speaking professional market is the largest on the continent by significant margin.",
-      tech: "Cape Town's tech ecosystem is well-developed — Jumo, Yoco, and numerous fintech startups; Amazon's African HQ is in Cape Town. ICT sector is strong; load shedding (power outages) remains the single most significant operational challenge for tech businesses.",
       social:
         "Ubuntu philosophy ('I am because we are') underpins a genuine warmth and community spirit. South Africa's racial complexity and 11 official languages create one of the world's most textured societies. Braai (barbecue) culture and sports (rugby, cricket) are powerful social unifiers.",
       stability:
@@ -2573,7 +2483,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Africa",
     s: {
       career: 5,
-      tech: 6,
       social: 7,
       stability: 7,
       lifestyle: 7,
@@ -2592,7 +2501,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Casablanca is Africa's second-largest financial centre and an active outsourcing hub for French-speaking multinationals. Renewable energy (world-scale solar at Noor Ouarzazate), phosphate industry, and tourism create professional opportunities; French language is essential for most formal roles.",
-      tech: "Growing tech ecosystem driven by government Maroc Digital strategy; Casablanca Finance City attracts fintech; Maroc Telecom's infrastructure is solid. CIH Bank digital platform and several insurtechs are local success stories. Talent pool is improving with reformed engineering curricula.",
       social:
         "Moroccan hospitality (generosity to guests is a cultural obligation) is legendary. Medina culture — souks, hammams, mint tea rituals — creates a uniquely textured social environment. Expat communities (French, Spanish, American) are well-established in Rabat, Casablanca, and Marrakech.",
       stability:
@@ -2630,7 +2538,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Africa",
     s: {
       career: 4,
-      tech: 5,
       social: 7,
       stability: 4,
       lifestyle: 7,
@@ -2649,7 +2556,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Limited professional economy — high unemployment (especially youth), emigration is the primary career strategy. French-language outsourcing provides some offshore employment; tourism is a major GDP contributor. Knowledge economy roles are minimal.",
-      tech: "Tunis has a small tech startup scene — InstaDeep (acquired by BioNTech), Vermeg (banking software), and a growing outsourcing sector. Government Startup Act (2018) created a supportive framework. Ecosystem is promising but small relative to population.",
       social:
         "Tunisians are welcoming and proud of their unique Arab-Berber-Mediterranean identity. Coffee shop culture in Tunis is a genuine social institution; the medina of Tunis is a living social space. French influence makes French-speakers immediately comfortable.",
       stability:
@@ -2687,7 +2593,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Africa",
     s: {
       career: 6,
-      tech: 7,
       social: 7,
       stability: 5,
       lifestyle: 7,
@@ -2706,7 +2611,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Nairobi is established as Africa's tech and financial hub — East African Community headquarters, UN Environment Programme, and a large NGO community create significant professional opportunities. English-speaking market; East African regional headquarters gravitating to Nairobi.",
-      tech: "Silicon Savannah is more than a nickname — M-Pesa (mobile money that transformed global fintech theory), Twiga Foods, Safaricom's M-Pesa ecosystem, and iHub have established Kenya as Africa's tech innovation leader. Google, Microsoft, and Stripe have African bases here.",
       social:
         "Kenyans are warm, entrepreneurial, and proud; Swahili and English co-official languages make integration accessible for most foreigners. Nairobi's Karen and Westlands social scenes are lively; safari culture adds a unique layer to social life unavailable elsewhere.",
       stability:
@@ -2744,7 +2648,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Africa",
     s: {
       career: 6,
-      tech: 6,
       social: 8,
       stability: 9,
       lifestyle: 9,
@@ -2763,7 +2666,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Mauritius functions as a gateway for Africa-focused investment — financial services, global business companies (GBC), and ICT are the primary professional sectors. Ebene Cybercity is a functional tech park; the island's small size limits scale but quality is high relative to the region.",
-      tech: "Ebene Cybercity hosts BPO, ITO, and fintech operations serving African and Indian Ocean markets. Government has invested significantly in ICT infrastructure; AFRINIC (African Network Information Centre) is headquartered here. Small ecosystem but sophisticated for island scale.",
       social:
         "One of the world's most harmonious multicultural societies — Creole, Indo-Mauritian, Sino-Mauritian, and Franco-Mauritian communities coexist with genuine warmth. English, French, and Mauritian Creole are all common; the cultural blend is uniquely Indian Ocean.",
       stability:
@@ -2801,7 +2703,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Middle East",
     s: {
       career: 9,
-      tech: 8,
       social: 7,
       stability: 8,
       lifestyle: 8,
@@ -2820,7 +2721,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "The Middle East's premier career hub — multinational regional headquarters, tax-free income, world-class networking through GITEX and WEF Davos satellite events, and an employer market that attracts global talent at competitive packages. Calibrated near Singapore on the global career scale.",
-      tech: "Dubai Internet City and Abu Dhabi's Hub71 are genuine tech ecosystems; Microsoft, Google, AWS, and Oracle have regional HQs here. UAE AI Strategy 2031 and ADNOC's digital transformation are driving deep tech investment. GITEX is the world's largest tech conference.",
       social:
         "Over 90% expat population creates an unusually cosmopolitan social fabric — essentially every nationality is present. Social life is vibrant in designated venues; however, public displays of affection and behaviour outside Western-style zones carry legal risk. Dry Ramadan restrictions apply citywide.",
       stability:
@@ -2858,7 +2758,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Middle East",
     s: {
       career: 7,
-      tech: 7,
       stability: 9,
       social: 6,
       lifestyle: 7,
@@ -2877,7 +2776,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "LNG wealth funds significant public sector employment and infrastructure projects; Al Udeid Air Base creates defence sector adjacency. Post-World Cup legacy investment in non-hydrocarbon sectors (sports, culture, finance) is creating new professional roles. Tax-free income is a significant draw.",
-      tech: "Heavy government tech investment through QF Research and Development; Education City technology research; QNB digital transformation and local fintech. Qatar AI Strategy is ambitious; Microsoft, Google, and AWS have regional presence. Ecosystem is growing from a small base (estimate).",
       social:
         "Qatari nationals constitute less than 15% of the population — the most expat-dominated society in the dataset. Social life is primarily within expat compound communities and licensed hotel venues. Interaction with Qatari society is limited for most expats.",
       stability:
@@ -2915,7 +2813,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Middle East",
     s: {
       career: 7,
-      tech: 7,
       social: 6,
       stability: 7,
       lifestyle: 6,
@@ -2934,7 +2831,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Vision 2030 is creating massive professional demand — NEOM city-scale project, giga-projects (The Line, Qiddiya, AMAALA, Diriyah Gate), and Saudi Aramco's $50bn digital transformation generate extraordinary high-paid opportunities. Most high-level roles require English; tax-free income applies.",
-      tech: "KACST and KAUST are genuine research institutions; STC (Saudi Telecom), stc pay fintech, and an emerging startup ecosystem backed by PIF (Public Investment Fund) are driving the sector. Cloud investment from hyperscalers is growing; Vision 2030 digital pillar is backed by serious capital.",
       social:
         "Vision 2030 has transformed social life dramatically since 2017 — concerts (MDL Beast), cinemas, mixed-gender events, and restaurants. Younger Saudis in Riyadh and Jeddah are significantly more cosmopolitan than the country's global image suggests; however, Islamic social norms remain legally enforced.",
       stability:
@@ -2972,7 +2868,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Middle East",
     s: {
       career: 5,
-      tech: 9,
       social: 4,
       stability: 4,
       lifestyle: 5,
@@ -2991,7 +2886,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "The 'Start-Up Nation' tech sector exists alongside severe broader economic inequality. The dual economy leaves large segments of the population behind, and recent geopolitical isolation threatens foreign investment and broader economic growth.",
-      tech: "One of the world's densest tech ecosystems per capita — approximately 1 startup per 1,400 people. Cybersecurity, agricultural technology (drip irrigation innovation), water recycling, medical device innovation, and AI research are globally recognised strengths. Scored near US benchmark levels.",
       social:
         "Social cohesion is heavily fragmented. While internal communities can be tight-knit, severe ethnic, religious, and political divisions create an exclusionary environment for outsiders and minorities, undermining broader societal friendliness.",
       stability:
@@ -3029,7 +2923,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Middle East",
     s: {
       career: 5,
-      tech: 6,
       social: 8,
       stability: 5,
       lifestyle: 8,
@@ -3048,7 +2941,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Turkey's large economy (G20 member) has significant professional activity in manufacturing, tourism, and finance; however, 80%+ inflation (2022–23 peak) and lira collapse have severely eroded domestic purchasing power. Turkish language proficiency is required for most formal roles.",
-      tech: "Istanbul is the region's leading tech hub outside the Gulf — Trendyol (e-commerce unicorn), Hepsiburada, and a growing SaaS sector. Technopark Istanbul hosts 500+ tech firms. Strong engineering talent pipeline from Bogazici, METU, and Bilkent universities.",
       social:
         "Turkish hospitality (misafirperverlik) is world-renowned — tea culture, communal mezes, and a genuine warmth toward guests are deeply embedded. Istanbul's cosmopolitan Beyoglu-Karakoy social scene rivals any European city for energy and intellectual depth.",
       stability:
@@ -3086,7 +2978,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Middle East",
     s: {
       career: 5,
-      tech: 5,
       social: 8,
       stability: 9,
       lifestyle: 8,
@@ -3105,7 +2996,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Omanisation (Tanfeedh) policies mandate local hiring quotas in most sectors — limiting formal professional roles for expatriates outside oil and gas, defence, and senior specialist positions. Oman has the smallest Gulf expat professional ecosystem; Vision 2040 is diversifying but slowly.",
-      tech: "Oman Vision 2040 includes a digital economy pillar; Omantel and Ooredoo are investing in 5G infrastructure. The Oman Digital Hub and Knowledge Oasis Muscat (KOM) tech park are developing ecosystems. Small scale but growing (estimate); not a regional tech hub compared to UAE or Saudi.",
       social:
         "Omanis have a deserved reputation as the most naturally hospitable people in the Arab world — the warmth is genuine, patient, and culturally deep rather than transactional. Expat communities are smaller than UAE/Qatar but well-integrated. Muscat's social scene is quieter but authentic.",
       stability:
@@ -3143,7 +3033,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Caribbean",
     s: {
       career: 5,
-      tech: 5,
       social: 8,
       stability: 6,
       lifestyle: 8,
@@ -3162,7 +3051,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Tourism-dominated economy (all-inclusive resort sector is massive) with free industrial zones (FTZ) providing manufacturing employment. Nearshore call centre and BPO sector is growing; professional opportunities are limited for non-Spanish speakers outside tourism management.",
-      tech: "Santo Domingo has a small but growing tech ecosystem — Santiago is emerging as an alternative hub. BPO and call centre operations attract tech-adjacent investment. Government Digital Transformation Agenda is in early stages; ecosystem is nascent (estimate).",
       social:
         "Extremely warm and festive culture — merengue and bachata are national music forms embedded in daily social life; Dominican warmth toward foreigners is genuine and sustained. Large diaspora (especially in New York) creates cosmopolitan awareness.",
       stability:
@@ -3200,7 +3088,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Caribbean",
     s: {
       career: 6,
-      tech: 6,
       social: 8,
       stability: 9,
       lifestyle: 9,
@@ -3219,7 +3106,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Financial services (offshore banking, insurance), tourism management, and Welcome Stamp digital professionals constitute the primary career sectors. Small economy (290,000 population) limits scale; English-speaking environment and proximity to US/UK markets are key advantages.",
-      tech: "Barbados was an early adopter of the digital nomad visa concept (Welcome Stamp, launched July 2020 — among the world's first). Small but sophisticated for island scale; fintech and insurtech operations are present. Government digital transformation is actively supported by PM Mottley's administration.",
       social:
         "Bajan culture is a sophisticated blend of British colonial heritage, African traditions, and Caribbean creativity — cricket, Crop Over festival, rum shops, and a genuine intellectual pride. Rihanna is a national hero and cultural ambassador; Bridgetown is lively and walkable.",
       stability:
@@ -3257,7 +3143,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Caribbean",
     s: {
       career: 5,
-      tech: 5,
       social: 8,
       stability: 8,
       lifestyle: 9,
@@ -3276,7 +3161,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Tourism (60% of GDP) and offshore financial services (one of the world's largest flags of convenience shipping registries) dominate. Limited professional market beyond these sectors; Nassau's small size constrains opportunity. Proximity to Miami creates regional business connectivity.",
-      tech: "The Bahamas was the first country to issue a Central Bank Digital Currency (Sand Dollar CBDC, 2020) — a meaningful fintech innovation from a small island state. FTX's collapse (Bahamas-headquartered) was a cautionary tale but the regulatory framework has since improved (estimate).",
       social:
         "Bahamian culture is warm, festival-oriented (Junkanoo parade is world-class), and proud of its distinct identity that bridges American influence and Caribbean tradition. English-speaking; Family Island communities are tight-knit and welcoming of respectful visitors.",
       stability:
@@ -3314,7 +3198,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Caribbean",
     s: {
       career: 5,
-      tech: 5,
       social: 9,
       stability: 6,
       lifestyle: 8,
@@ -3333,7 +3216,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Tourism, BPO (call centres), remittances, and agriculture are economic pillars; professional market is limited and mostly local. English-speaking advantage opens BPO and remote work opportunities. Diaspora connection (New York, London, Toronto) provides some professional bridges.",
-      tech: "Kingston has a small emerging tech scene; the government's Digital Jamaica initiative and a growing BPO/ITO sector provide some opportunities. Jamaica's English-language advantage and proximity to North American time zones attract call centre operations from US corporates (estimate).",
       social:
         "Jamaica's cultural influence is extraordinary relative to its 3 million population — reggae, dancehall, Rastafari philosophy, patois language, and an indomitable national spirit have impacted global music, fashion, and sport out of all proportion to size. Jamaicans are among the world's most charismatic and culturally confident people.",
       stability:
@@ -3371,7 +3253,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Caribbean",
     s: {
       career: 6,
-      tech: 6,
       social: 9,
       stability: 7,
       lifestyle: 8,
@@ -3390,7 +3271,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Energy wealth (LNG, petrochemicals) funds the economy and professional market — NGC, bpTT, Shell, and Petrotrin (now Heritage Petroleum) anchor the formal sector. English-speaking financial services sector serves the wider Caribbean; proximity to Venezuela creates both opportunity and risk.",
-      tech: "Growing fintech and ICT sector supported by iGovTT (National ICT Company) and Invest Trinidad. English-language advantage and Caribbean hub position attract BPO operations. Tech Park Trinidad and the Digital Hub initiative are developing the ecosystem (estimate).",
       social:
         "Trinidad hosts one of the world's greatest street festivals — Carnival (regarded as the template for all Caribbean carnivals); steel pan was invented here; calypso, soca, and chutney music define a uniquely exuberant social culture. Multicultural society (African, Indian, Chinese, Syrian, European) creates extraordinary food and cultural diversity.",
       stability:
@@ -3428,7 +3308,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Central America",
     s: {
       career: 6,
-      tech: 6,
       social: 8,
       stability: 9,
       lifestyle: 9,
@@ -3447,7 +3326,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Intel's decision to locate its largest semiconductor plant here in 1997 established Costa Rica as a nearshore tech hub; medical device manufacturing (Boston Scientific, Abbott) is now the largest export sector. Pura Vida ethos and educated English-speaking workforce attract corporate investment.",
-      tech: "Zona Franca (free trade zone) model attracts tech and medical device multinationals. San José's Escazú and Santa Ana tech corridors house significant BPO and software development operations. Growing SaaS and startup scene; government e-governance is among the region's most advanced.",
       social:
         "Pura Vida ('pure life') is not just a phrase but a genuine national philosophy — Ticos (Costa Ricans) are warm, patient, and deeply committed to the well-being of others. Expat community is the largest per-capita in Central America; integration is relatively straightforward.",
       stability:
@@ -3485,7 +3363,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Central America",
     s: {
       career: 7,
-      tech: 6,
       social: 7,
       stability: 6,
       lifestyle: 8,
@@ -3504,7 +3381,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Panama has the strongest economy of the three Central American additions, with a logistics-and-services base anchored by the Canal. The market is still far smaller than global top-tier hubs, so senior career ceiling is limited.",
-      tech: "Digital access is decent rather than elite. It supports remote work and mainstream tech services, but Panama is not a frontier tech ecosystem.",
       social:
         "Panama feels comparatively cosmopolitan and urban, with a visible expat and international-business layer. Inequality still shapes day-to-day experience, especially outside the capital.",
       stability:
@@ -3542,7 +3418,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Central America",
     s: {
       career: 4,
-      tech: 4,
       social: 5,
       stability: 4,
       lifestyle: 7,
@@ -3561,7 +3436,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "Guatemala has the largest economy in Central America by size, but GDP per capita remains low and the economy leans heavily on remittances and informal work. Career depth is limited for international professionals.",
-      tech: "Tech depth is limited, with modest internet penetration and weak FDI intensity. The ecosystem is functional but not advanced.",
       social:
         "Guatemala has a rich Indigenous cultural base and real social texture, but persistent inequality shapes daily life. Integration is easier in expat pockets than nationwide.",
       stability:
@@ -3599,7 +3473,6 @@ export const COUNTRIES: CountryData[] = [
     r: "Central America",
     s: {
       career: 4,
-      tech: 5,
       social: 5,
       stability: 5,
       lifestyle: 7,
@@ -3618,7 +3491,6 @@ export const COUNTRIES: CountryData[] = [
     d: {
       career:
         "El Salvador's economy is smaller and less lucrative, with heavy dependence on remittances. The professional market is modest and concentrated in the capital.",
-      tech: "Tech access is decent but not elite, with a narrow domestic market for advanced tech employers. It supports remote work more than local scale.",
       social:
         "Public life is compact and visible, with a growing tourism layer. Social tone is still shaped by the security state and polarization around the Bukele model.",
       stability:

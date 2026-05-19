@@ -1,4 +1,4 @@
-import type { CareerField, Category, CategoryId } from "../../types";
+import type { Category, CategoryId } from "../../types";
 import { WEIGHT_PROFILES, type WeightProfileId } from "../../data/weight-profiles";
 import { CATEGORIES } from "../../data/categories";
 import { ModalShell } from "../ModalShell";
@@ -7,9 +7,6 @@ type SettingsModalProps = {
   open: boolean;
   onClose: () => void;
   categories: Category[];
-  careerFields: CareerField[];
-  selectedFieldId: string;
-  onSelectField: (id: string) => void;
   onResetWeights: () => void;
   customWeights: number[];
   onChangeWeight: (index: number, value: number) => void;
@@ -23,9 +20,6 @@ export function SettingsModal({
   open,
   onClose,
   categories,
-  careerFields,
-  selectedFieldId,
-  onSelectField,
   onResetWeights,
   customWeights,
   onChangeWeight,
@@ -36,7 +30,6 @@ export function SettingsModal({
 }: SettingsModalProps) {
   const totalWeight = Math.round(customWeights.reduce((sum, weight) => sum + weight * 100, 0));
   const totalOk = totalWeight === 100;
-  const currentField = careerFields.find((field) => field.id === selectedFieldId) || careerFields[0];
 
   const weightsMatchProfile = (profileId: WeightProfileId) => {
     const profile = WEIGHT_PROFILES.find((p) => p.id === profileId);
@@ -153,38 +146,13 @@ export function SettingsModal({
         <div style={{ fontFamily: fontMono, fontSize: 11, color: "#a5b4fc", letterSpacing: 1, marginBottom: 12 }}>
           CAREER FIELD
         </div>
-        <p style={{ fontSize: 12, color: "#6b6b8d", margin: "0 0 12px", lineHeight: 1.6 }}>
-          Select your industry. The <strong style={{ color: "#c4b5fd" }}>Sector</strong> category scores update for each country based on that
-          field's job market, salary ceiling, and career opportunities.
-        </p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(180px,1fr))", gap: 6 }}>
-          {careerFields.map((field) => (
-            <button
-              key={field.id}
-              onClick={() => onSelectField(field.id)}
-              type="button"
-              style={{
-                fontFamily: fontMono,
-                fontSize: 11,
-                padding: "8px 10px",
-                borderRadius: 6,
-                textAlign: "left",
-                cursor: "pointer",
-                border: selectedFieldId === field.id ? "1px solid #8b5cf6" : "1px solid #1a1a30",
-                background: selectedFieldId === field.id ? "#2e1065" : "#0a0a1e",
-                color: selectedFieldId === field.id ? "#c4b5fd" : "#6b6b8d",
-                transition: "all 0.15s",
-              }}
-            >
-              {field.icon} {field.name}
-            </button>
-          ))}
-        </div>
-        <div style={{ background: "#0a0a1e", border: "1px solid #2a2a4a", borderRadius: 6, padding: "10px 14px", marginTop: 10 }}>
-          <span style={{ fontFamily: fontMono, fontSize: 11, color: "#a5b4fc" }}>
-            {currentField.icon} {currentField.name}
-          </span>
-          <p style={{ fontSize: 12, color: "#6b6b8d", margin: "4px 0 0", lineHeight: 1.5 }}>{currentField.desc}</p>
+        <div style={{ background: "#0a0a1e", border: "1px solid #2a2a4a", borderRadius: 8, padding: "14px 16px" }}>
+          <p style={{ fontSize: 13, color: "#a0a0c0", margin: "0 0 8px", lineHeight: 1.6 }}>
+            💻 Relo Atlas currently scores all countries for the <strong style={{ color: "#c4b5fd" }}>Technology & Software</strong> sector.
+          </p>
+          <p style={{ fontSize: 12, color: "#6b6b8d", margin: 0, lineHeight: 1.6 }}>
+            Support for Finance, Healthcare, Engineering, and more is planned for a future release.
+          </p>
         </div>
       </div>
 
@@ -206,9 +174,9 @@ export function SettingsModal({
                 key={category.id}
                 style={{ display: "flex", alignItems: "center", gap: 10, padding: "6px 0", borderBottom: "1px solid #111128" }}
               >
-                <span style={{ fontSize: 14, flexShrink: 0 }}>{category.id === "tech" ? currentField.icon : category.icon}</span>
+                <span style={{ fontSize: 14, flexShrink: 0 }}>{category.id === "tech" ? "💻" : category.icon}</span>
                 <span style={{ fontSize: 12, color: "#a0a0c0", minWidth: 140, flexShrink: 0 }}>
-                  {category.id === "tech" ? `${currentField.name.split(" ")[0]} Sector` : category.name}
+                  {category.id === "tech" ? "Tech Sector" : category.name}
                 </span>
                 <input
                   type="range"

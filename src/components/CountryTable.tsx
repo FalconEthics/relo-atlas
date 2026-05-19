@@ -1,5 +1,6 @@
 import { Fragment } from "react";
-import type { CareerField, Category, CategoryId, CountryData, CountryScores } from "../types";
+import { CAREER_FIELDS } from "../data/career-fields";
+import type { Category, CategoryId, CountryData, CountryScores } from "../types";
 import type { ScoreBreakdown } from "../utils/score";
 import { scoreColor, scoreTier } from "../utils/score";
 import tableStyles from "../styles/app-table.module.css";
@@ -10,7 +11,6 @@ type CountryTableProps = {
   view: CategoryId | "overall";
   countries: CountryRow[];
   activeCategory: Category | undefined;
-  selectedField: CareerField;
   expandedRow: string | null;
   onToggleRow: (countryCode: string) => void;
   onOpenDetail: (countryCode: string) => void;
@@ -21,7 +21,6 @@ export function CountryTable({
   view,
   countries,
   activeCategory,
-  selectedField,
   expandedRow,
   onToggleRow,
   onOpenDetail,
@@ -57,16 +56,16 @@ export function CountryTable({
         </thead>
         <tbody>
           {countries.map((country, index) => {
-            const value = view === "overall" ? country.w : (country.es || country.s)[view];
+            const value = view === "overall" ? country.w : (country.es || country.s)[view] ?? 0;
             const tier = scoreTier(country.w);
             const isExpanded = expandedRow === country.c && view !== "overall";
             const categoryInfo =
               view !== "overall"
                 ? isTechView
-                  ? `${selectedField.name} sector: ${selectedField.notes?.[country.c] ?? selectedField.desc}`
+                  ? `Tech sector: ${CAREER_FIELDS[0].desc}`
                   : country.d[view]
                 : null;
-            const categoryScore = view === "overall" ? null : (country.es || country.s)[view];
+            const categoryScore = view === "overall" ? null : (country.es || country.s)[view] ?? 0;
 
             return (
               <Fragment key={country.c}>
@@ -129,9 +128,9 @@ export function CountryTable({
                     <td colSpan={4} style={{ padding: 0 }}>
                       <div className={tableStyles.expandedCard}>
                         <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
-                          <span style={{ fontSize: 14 }}>{isTechView ? selectedField.icon : activeCategory?.icon}</span>
+                          <span style={{ fontSize: 14 }}>{isTechView ? CAREER_FIELDS[0].icon : activeCategory?.icon}</span>
                           <span style={{ fontFamily: fontMono, fontSize: 12, color: "#a5b4fc", fontWeight: 600 }}>
-                            {isTechView ? `${selectedField.name} Sector` : activeCategory?.name}
+                            {isTechView ? "Tech Sector" : activeCategory?.name}
                           </span>
                            {categoryScore !== null && (
                   <span

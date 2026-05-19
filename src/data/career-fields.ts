@@ -5,8 +5,7 @@ export const CAREER_FIELDS: CareerField[] = [
     id: "technology",
     name: "Technology & Software",
     icon: "💻",
-    desc:
-      "Software engineering, product, DevOps, AI/ML, SRE. Evaluated on SWE compensation, FAANG presence, startup ecosystem maturity, and senior career ceiling.",
+    desc: "Software engineering, product, DevOps, AI/ML, SRE. Evaluated on SWE compensation, FAANG presence, startup ecosystem maturity, and senior career ceiling.",
     scores: {
       SG: 7,
       CH: 9,
@@ -32,16 +31,53 @@ export const CAREER_FIELDS: CareerField[] = [
       BE: 5,
       SE: 7,
       AT: 5,
-      IT: 3,
+      IT: 4,
       KR: 6,
+      GR: 4,
+      HU: 5,
+      RO: 6,
+      BG: 5,
+      SI: 6,
+      HR: 5,
+      TW: 9,
+      MY: 6,
+      TH: 5,
+      VN: 6,
+      IN: 7,
+      MX: 6,
+      BR: 6,
+      AR: 6,
+      CL: 6,
+      UY: 6,
+      CO: 6,
+      PE: 5,
+      ZA: 6,
+      MA: 6,
+      TN: 5,
+      KE: 7,
+      MU: 6,
+      AE: 8,
+      QA: 7,
+      SA: 7,
+      IL: 9,
+      TR: 6,
+      OM: 5,
+      DO: 5,
+      BB: 6,
+      BS: 5,
+      JM: 5,
+      TT: 6,
+      CR: 6,
+      PA: 6,
+      GT: 4,
+      SV: 5,
     },
   },
   {
     id: "finance",
     name: "Finance & Banking",
     icon: "🏦",
-    desc:
-      "Investment banking, asset management, fintech, trading, private equity. Scored on GFCI 38 rankings, banking sector depth, finance salaries vs CoL, and immigrant accessibility.",
+    desc: "Investment banking, asset management, fintech, trading, private equity. Scored on GFCI 38 rankings, banking sector depth, finance salaries vs CoL, and immigrant accessibility.",
     scores: {
       SG: 9,
       CH: 9,
@@ -75,8 +111,7 @@ export const CAREER_FIELDS: CareerField[] = [
     id: "engineering",
     name: "Engineering",
     icon: "⚙️",
-    desc:
-      "Mechanical, civil, electrical, aerospace, chemical, industrial. Scored on manufacturing value-added, R&D intensity, engineering salaries, and skilled-worker shortage severity.",
+    desc: "Mechanical, civil, electrical, aerospace, chemical, industrial. Scored on manufacturing value-added, R&D intensity, engineering salaries, and skilled-worker shortage severity.",
     scores: {
       SG: 6,
       CH: 9,
@@ -110,8 +145,7 @@ export const CAREER_FIELDS: CareerField[] = [
     id: "healthcare",
     name: "Healthcare & Life Sciences",
     icon: "🧬",
-    desc:
-      "Medicine, pharma, biotech, nursing, medical research. Scored on healthcare spending per capita, pharma/biotech footprint, demand for foreign clinicians, and research prestige.",
+    desc: "Medicine, pharma, biotech, nursing, medical research. Scored on healthcare spending per capita, pharma/biotech footprint, demand for foreign clinicians, and research prestige.",
     scores: {
       SG: 8,
       CH: 10,
@@ -145,8 +179,7 @@ export const CAREER_FIELDS: CareerField[] = [
     id: "consulting",
     name: "Business & Consulting",
     icon: "📊",
-    desc:
-      "Strategy, management consulting, business analysis, advisory. Scored on Big 4 + MBB presence, multinational HQ density, English-friendliness, and consulting compensation.",
+    desc: "Strategy, management consulting, business analysis, advisory. Scored on Big 4 + MBB presence, multinational HQ density, English-friendliness, and consulting compensation.",
     scores: {
       SG: 8,
       CH: 8,
@@ -180,8 +213,7 @@ export const CAREER_FIELDS: CareerField[] = [
     id: "legal",
     name: "Legal",
     icon: "⚖️",
-    desc:
-      "Corporate law, international law, IP, arbitration. Scored on GFCI legal market depth, arbitration hub status (Queen Mary 2025), demand for foreign-qualified lawyers, and bar accessibility.",
+    desc: "Corporate law, international law, IP, arbitration. Scored on GFCI legal market depth, arbitration hub status (Queen Mary 2025), demand for foreign-qualified lawyers, and bar accessibility.",
     scores: {
       SG: 9,
       CH: 7,
@@ -215,8 +247,7 @@ export const CAREER_FIELDS: CareerField[] = [
     id: "marketing",
     name: "Marketing & Communications",
     icon: "📣",
-    desc:
-      "Brand strategy, digital marketing, PR, growth, advertising. Scored on Statista/eMarketer ad spend, holding-company HQ presence, brand HQ density, and English-friendliness.",
+    desc: "Brand strategy, digital marketing, PR, growth, advertising. Scored on Statista/eMarketer ad spend, holding-company HQ presence, brand HQ density, and English-friendliness.",
     scores: {
       SG: 7,
       CH: 7,
@@ -250,8 +281,7 @@ export const CAREER_FIELDS: CareerField[] = [
     id: "media",
     name: "Media & Entertainment",
     icon: "🎬",
-    desc:
-      "Film, TV, journalism, streaming, gaming, content creation. Scored on ProdPro 2024 production spend, Newzoo gaming market size, K-content export value, and tax-incentive attractiveness.",
+    desc: "Film, TV, journalism, streaming, gaming, content creation. Scored on ProdPro 2024 production spend, Newzoo gaming market size, K-content export value, and tax-incentive attractiveness.",
     scores: {
       SG: 4,
       CH: 4,
@@ -285,8 +315,7 @@ export const CAREER_FIELDS: CareerField[] = [
     id: "adult-entertainment",
     name: "Adult Entertainment & Sex Work",
     icon: "🔞",
-    desc:
-      "Adult entertainment and sex work. Scored 60% on legal status/protection and 40% on market opportunity (legal industry scale, visibility, and income potential signals).",
+    desc: "Adult entertainment and sex work. Scored 60% on legal status/protection and 40% on market opportunity (legal industry scale, visibility, and income potential signals).",
     scores: {
       SG: 5.9,
       CH: 8.1,
@@ -348,8 +377,7 @@ export const CAREER_FIELDS: CareerField[] = [
     id: "education",
     name: "Education & Research",
     icon: "🎓",
-    desc:
-      "Academia, teaching, research, EdTech. Scored on QS/THE 2025–26 university rankings, Nature Index 2024 research output, R&D as % of GDP, and openness to foreign researchers.",
+    desc: "Academia, teaching, research, EdTech. Scored on QS/THE 2025–26 university rankings, Nature Index 2024 research output, R&D as % of GDP, and openness to foreign researchers.",
     scores: {
       SG: 9,
       CH: 10,
@@ -383,8 +411,7 @@ export const CAREER_FIELDS: CareerField[] = [
     id: "architecture",
     name: "Architecture & Real Estate",
     icon: "🏛",
-    desc:
-      "Architecture, urban planning, property development, interior design. Scored on WA100/ENR top-firm HQ presence, construction sector GDP, urban development pipeline, and shortage-list status.",
+    desc: "Architecture, urban planning, property development, interior design. Scored on WA100/ENR top-firm HQ presence, construction sector GDP, urban development pipeline, and shortage-list status.",
     scores: {
       SG: 9,
       CH: 7,
@@ -418,8 +445,7 @@ export const CAREER_FIELDS: CareerField[] = [
     id: "construction",
     name: "Construction & Manufacturing",
     icon: "🏗",
-    desc:
-      "Civil construction, industrial manufacturing, project management, trades. Scored on infrastructure pipeline size, manufacturing output, trades shortage severity, and immigration openness.",
+    desc: "Civil construction, industrial manufacturing, project management, trades. Scored on infrastructure pipeline size, manufacturing output, trades shortage severity, and immigration openness.",
     scores: {
       SG: 6,
       CH: 8,
@@ -453,8 +479,7 @@ export const CAREER_FIELDS: CareerField[] = [
     id: "logistics",
     name: "Logistics & Supply Chain",
     icon: "🚢",
-    desc:
-      "Freight, shipping, warehousing, supply chain management. Scored on World Bank LPI 2023, container port throughput, global logistics HQ density, and 3PL employer landscape.",
+    desc: "Freight, shipping, warehousing, supply chain management. Scored on World Bank LPI 2023, container port throughput, global logistics HQ density, and 3PL employer landscape.",
     scores: {
       SG: 10,
       CH: 8,
@@ -488,8 +513,7 @@ export const CAREER_FIELDS: CareerField[] = [
     id: "agriculture",
     name: "Agriculture & Food",
     icon: "🌾",
-    desc:
-      "Farming, agritech, food science, food production, agribusiness. Scored on FAO/ITC agricultural export value 2023–24, agritech R&D investment, and food/agribusiness HQ density.",
+    desc: "Farming, agritech, food science, food production, agribusiness. Scored on FAO/ITC agricultural export value 2023–24, agritech R&D investment, and food/agribusiness HQ density.",
     scores: {
       SG: 2,
       CH: 7,
@@ -523,8 +547,7 @@ export const CAREER_FIELDS: CareerField[] = [
     id: "tourism",
     name: "Tourism & Hospitality",
     icon: "✈️",
-    desc:
-      "Hotel management, travel industry, F&B, event management. Scored on UNWTO 2023 international arrivals, WTTC tourism GDP contribution, and hospitality employer/brand density.",
+    desc: "Hotel management, travel industry, F&B, event management. Scored on UNWTO 2023 international arrivals, WTTC tourism GDP contribution, and hospitality employer/brand density.",
     scores: {
       SG: 8,
       CH: 8,
@@ -558,8 +581,7 @@ export const CAREER_FIELDS: CareerField[] = [
     id: "arts",
     name: "Arts & Design",
     icon: "🎨",
-    desc:
-      "Fine arts, graphic design, fashion, UX, photography. Scored on IFDAQ Global Fashion Cities Index, creative economy GDP share, presence of fashion houses/design firms, and art market share.",
+    desc: "Fine arts, graphic design, fashion, UX, photography. Scored on IFDAQ Global Fashion Cities Index, creative economy GDP share, presence of fashion houses/design firms, and art market share.",
     scores: {
       SG: 5,
       CH: 6,
@@ -593,8 +615,7 @@ export const CAREER_FIELDS: CareerField[] = [
     id: "sales",
     name: "Sales & Customer Success",
     icon: "🤝",
-    desc:
-      "B2B/B2C sales, account management, business development. Scored on EMEA/APAC sales hub density, English working culture, B2B SaaS OTE benchmarks, and multinational office presence.",
+    desc: "B2B/B2C sales, account management, business development. Scored on EMEA/APAC sales hub density, English working culture, B2B SaaS OTE benchmarks, and multinational office presence.",
     scores: {
       SG: 9,
       CH: 6,

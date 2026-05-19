@@ -1,3 +1,4 @@
+import { CAREER_FIELDS } from "../../data/career-fields";
 import type { Category, CountryData, CountryScores } from "../../types";
 import type { ScoreBreakdown } from "../../utils/score";
 import { scoreColor, scoreTier } from "../../utils/score";
@@ -9,7 +10,6 @@ type CountryDetailModalProps = {
   weightedScore: number;
   scoreBreakdown: ScoreBreakdown | null;
   categories: Category[];
-  selectedField: { id: string; name: string; icon: string; desc: string };
   effectiveScores: CountryScores | null;
   catNote: string | null;
   onToggleCatNote: (id: string) => void;
@@ -24,7 +24,6 @@ export function CountryDetailModal({
   weightedScore,
   scoreBreakdown,
   categories,
-  selectedField,
   effectiveScores,
   catNote,
   onToggleCatNote,
@@ -47,12 +46,8 @@ export function CountryDetailModal({
 
   const categoryText = (id: Category["id"], score: number) => {
     if (id === "tech") {
-      if (selectedField.id !== "technology") {
-        return `${selectedField.name} sector score for ${country.n}: ${score}/10. ${selectedField.desc}`;
-      }
-      return country.d.tech;
+      return `Tech sector score for ${country.n}: ${score}/10. ${CAREER_FIELDS[0].desc}`;
     }
-
     const baseText = country.d[id];
     return id === "immi" ? stripParentNotes(baseText) : baseText;
   };
@@ -124,9 +119,7 @@ export function CountryDetailModal({
           const openNote = catNote === cat.id;
           const noteText =
             cat.id === "tech"
-              ? selectedField.id !== "technology"
-                ? `${selectedField.name} sector score for ${country.n}: ${value}/10. ${selectedField.desc}`
-                : country.d.tech
+              ? `Tech sector score for ${country.n}: ${value}/10. ${CAREER_FIELDS[0].desc}`
               : country.d[cat.id];
 
           return (

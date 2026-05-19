@@ -136,13 +136,13 @@ export type Source = {
   what: string;
 };
 
-export type CountryDetails = Record<CategoryId, string> & {
+export type CountryDetails = Omit<Record<CategoryId, string>, "tech"> & { tech?: string } & {
   sum: string;
   deal: string;
   parent: string;
 };
 
-export type CountryScores = Record<CategoryId, number>;
+export type CountryScores = Omit<Record<CategoryId, number>, "tech"> & { tech?: number };
 
 export type CountryData = {
   c: CountryCode;

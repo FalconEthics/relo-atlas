@@ -1,5 +1,6 @@
 import { Fragment } from "react";
-import type { Category, CategoryId, CareerField, CountryData, CountryScores } from "../types";
+import { CAREER_FIELDS } from "../data/career-fields";
+import type { Category, CategoryId, CountryData, CountryScores } from "../types";
 import type { WeightProfile } from "../data/weight-profiles";
 import { scoreBreakdown, scoreColor, scoreTier } from "../utils/score";
 
@@ -10,7 +11,6 @@ type FinalBattlePanelProps = {
   categories: Category[];
   customWeights: number[];
   activeProfile: WeightProfile;
-  selectedField: CareerField;
   effectiveScores: (country: CountryData) => CountryScores;
   onOpenDetail: (countryCode: string) => void;
   fontMono: string;
@@ -31,7 +31,6 @@ export function FinalBattlePanel({
   categories,
   customWeights,
   activeProfile,
-  selectedField,
   effectiveScores,
   onOpenDetail,
   fontMono,
@@ -51,12 +50,8 @@ export function FinalBattlePanel({
 
   const categoryText = (country: CountryData, id: CategoryId, score: number) => {
     if (id === "tech") {
-      if (selectedField.id !== "technology") {
-        return `${selectedField.name} sector score for ${country.n}: ${score}/10. ${selectedField.desc}`;
-      }
-      return country.d.tech;
+      return `Tech sector score for ${country.n}: ${score}/10. ${CAREER_FIELDS[0].desc}`;
     }
-
     const baseText = country.d[id];
     return id === "immi" ? stripParentNotes(baseText) : baseText;
   };

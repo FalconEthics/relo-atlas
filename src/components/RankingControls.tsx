@@ -1,5 +1,6 @@
+import { CAREER_FIELDS } from "../data/career-fields";
 import { CATEGORIES } from "../data/categories";
-import type { CareerField, Category, CategoryId, RegionFilter } from "../types";
+import type { Category, CategoryId, RegionFilter } from "../types";
 
 type RankingControlsProps = {
   view: CategoryId | "overall" | "battle";
@@ -7,10 +8,8 @@ type RankingControlsProps = {
   region: RegionFilter;
   onChangeRegion: (next: RegionFilter) => void;
   activeCategory: Category | undefined;
-  selectedField: CareerField;
   customWeights: number[];
   onOpenSources: (category: CategoryId) => void;
-  onSetSourcesField: (fieldId: CareerField["id"] | null) => void;
   onClearExpanded: () => void;
   fontMono: string;
   description: string | undefined;
@@ -22,15 +21,13 @@ export function RankingControls({
   region,
   onChangeRegion,
   activeCategory,
-  selectedField,
   customWeights,
   onOpenSources,
-  onSetSourcesField,
   onClearExpanded,
   fontMono,
   description,
 }: RankingControlsProps) {
-  const viewDescription = view === "tech" ? selectedField.desc : description;
+  const viewDescription = view === "tech" ? CAREER_FIELDS[0].desc : description;
 
   return (
     <>
@@ -105,8 +102,8 @@ export function RankingControls({
                 whiteSpace: "nowrap",
               }}
             >
-              {cat.id === "tech" ? selectedField.icon : cat.icon} {" "}
-              {cat.id === "tech" ? selectedField.name.split(/\s/)[0] : cat.name.split(/\s/)[0]}
+              {cat.id === "tech" ? CAREER_FIELDS[0].icon : cat.icon} {" "}
+              {cat.id === "tech" ? "Tech" : cat.name.split(/\s/)[0]}
             </button>
           ))}
         </div>
@@ -160,8 +157,7 @@ export function RankingControls({
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
               <span style={{ fontFamily: fontMono, fontSize: 13, color: "#a5b4fc", fontWeight: 600 }}>
-                {view === "tech" ? selectedField.icon : activeCategory.icon}{" "}
-                {view === "tech" ? `${selectedField.name} Sector` : activeCategory.name}
+                {view === "tech" ? `${CAREER_FIELDS[0].icon} Tech Sector` : `${activeCategory.icon} ${activeCategory.name}`}
               </span>
               <span style={{ fontFamily: fontMono, fontSize: 11, color: "#5b5b7d" }}>
                 Weight: {(customWeights[CATEGORIES.findIndex((cat) => cat.id === view)] * 100).toFixed(0)}%
@@ -170,10 +166,7 @@ export function RankingControls({
             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
               <span style={{ fontFamily: fontMono, fontSize: 10, color: "#4a4a6a" }}>Click row for country details</span>
               <button
-                onClick={() => {
-                  onOpenSources(view);
-                  onSetSourcesField(view === "tech" ? selectedField.id : null);
-                }}
+                onClick={() => onOpenSources(view)}
                 type="button"
                 style={{
                   fontFamily: fontMono,
