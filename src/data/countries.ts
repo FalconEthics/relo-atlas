@@ -402,7 +402,7 @@ export const COUNTRIES: CountryData[] = [
   },
   {
     c: "JP",
-    f: "🇵",
+    f: "🇯🇵",
     n: "Japan",
     r: "Asia",
     s: {
@@ -1831,11 +1831,11 @@ export const COUNTRIES: CountryData[] = [
     n: "Taiwan",
     r: "Asia",
     s: {
-      career: 7,
+      career: 8,
       tech: 9,
-      social: 8,
-      stability: 5,
-      lifestyle: 8,
+      social: 6,
+      stability: 4,
+      lifestyle: 5,
       terrain: 8,
       safety: 9,
       urban: 8,
@@ -1843,21 +1843,21 @@ export const COUNTRIES: CountryData[] = [
       env: 6,
       housing: 5,
       gov: 8,
-      values: 9,
+      values: 7,
       immi: 5,
       edu: 8,
       history: 8,
     },
     d: {
       career:
-        "Dominated by the semiconductor industry — TSMC alone accounts for ~15% of GDP; salaries in tech are competitive by Asian standards, though below Silicon Valley. Non-tech professional roles are more limited for non-Mandarin speakers.",
+        "Work culture is notoriously intense — 12-hour days are common, and the '996' schedule (9am to 9pm, 6 days a week) is widespread in tech and manufacturing. Presenteeism is deeply embedded; leaving before your boss is frowned upon. Burnout and stress-related health issues are endemic. Despite TSMC's global dominance, the average professional experience is gruelling compared to Western markets.",
       tech: "Global semiconductor superpower — TSMC, MediaTek, and ASUS are headquartered here. Tech infrastructure is world-class: 5G penetration, gigabit internet everywhere, and a deep engineering talent pool. Scored near Singapore levels (estimate).",
       social:
-        "Consistently ranked as one of Asia's most welcoming countries for foreigners — Taiwanese people are genuinely warm, patient, and curious. English signage and proficiency in Taipei is high; bubble tea culture and night markets are deeply social institutions.",
+        "Taiwanese people are genuinely warm and friendly, but the punishing work schedule leaves little room for social life. Weekends are often spent recovering or catching up on work. The culture is welcoming in theory, but the time and energy for social connection are severely constrained by professional demands.",
       stability:
         "The defining geopolitical variable — China considers Taiwan a renegotiate territory and has never renounced force as an option. Cross-strait tensions under Xi Jinping have elevated this risk materially; military invasion risk is low but non-zero and rising.",
       lifestyle:
-        "Night markets, world-class Taiwanese cuisine, accessible mountain hiking from the capital, hot springs, cycling infrastructure, and a vibrant arts scene combine to create an exceptionally high quality of daily life.",
+        "Taiwan has excellent food, night markets, and nature access on paper, but daily life is heavily consumed by work. Long hours, high pressure, and poor work-life balance mean most people have limited energy to actually enjoy what the country offers. Quality of life is significantly undermined by professional demands.",
       terrain:
         "Over 200 peaks above 3,000m (Jade Mountain is the highest in Northeast Asia outside Russia); tropical south, subtropical north, east coast Pacific cliffs, and west coast plains offer dramatic diversity in a compact island.",
       safety:
@@ -1876,8 +1876,8 @@ export const COUNTRIES: CountryData[] = [
       edu: "National Taiwan University, NTHU, and NCTU are globally respected in engineering and sciences. Graduate programs increasingly offered in English. International student numbers growing; scholarship programs for foreign students are available.",
       history:
         "Austronesian indigenous peoples predating Han settlement; Dutch colonial era; Ming loyalist Zheng Chenggong; Qing dynasty incorporation; Japanese colonial period (1895–1945); ROC government retreat in 1949 — an extraordinarily layered identity in a small island.",
-      sum: "Taiwan offers a compelling combination of top-tier tech ecosystem, world-class healthcare, exceptional personal safety, and a genuinely welcoming culture — undermined primarily by the China threat and Taipei's housing costs.",
-      deal: "The geopolitical overhang of cross-strait tensions is the single largest deterrent — for long-term residency planning, the possibility of conflict with China cannot be rationally ignored; additionally, Taipei housing affordability is a structural problem.",
+      sum: "Taiwan offers world-class tech, healthcare, and safety, but the punishing work culture severely undermines daily quality of life. The long hours and high stress make it a difficult environment for those seeking a balanced lifestyle, compounded by geopolitical risk.",
+      deal: "The toxic work culture (996 schedule, endemic presenteeism) is the primary lifestyle constraint for most professionals, alongside the existential China threat and Taipei's severe housing affordability crisis.",
       parent:
         "Parents of Taiwan residents on long-term visas can apply for a multiple-entry visitor visa (up to 6 months per visit). Family reunification for non-citizens requires the resident to hold Taiwan residence and demonstrate financial support; the process is manageable but requires documentation.",
     },
@@ -3515,7 +3515,8 @@ export const COUNTRIES: CountryData[] = [
         "Terrain diversity is a standout: rainforest, cloud forest, islands, and a two-ocean geography give Panama real range for nature-first living.",
       safety:
         "Safety is mixed rather than elite, with a murder rate meaningfully above OECD norms. The capital has safer and rougher zones; location choice matters.",
-      urban: "Panama City is the clear urban engine, with modern towers, malls, and services. Outside the capital, urban intensity drops fast.",
+      urban:
+        "Panama City is the clear urban engine, with modern towers, malls, and services. Outside the capital, urban intensity drops fast.",
       health:
         "Health outcomes are solid for the region, with high life expectancy and decent private options. Service quality remains uneven outside the main urban corridor.",
       env: "Environmental appeal is high due to strong forest cover and biodiversity. Coastal and island areas are exposed to climate stress and development pressure.",
@@ -3524,8 +3525,7 @@ export const COUNTRIES: CountryData[] = [
       gov: "Governance is middling with persistent corruption concerns. Institutions function, but trust in public sector integrity is limited.",
       values:
         "Social values are mixed and pragmatic, combining Latin American conservatism with international-business openness, especially in the capital.",
-      immi:
-        "Relatively friendly entry rules and workable residency options make Panama accessible. Residency is achievable, but requirements vary by pathway and profile.",
+      immi: "Relatively friendly entry rules and workable residency options make Panama accessible. Residency is achievable, but requirements vary by pathway and profile.",
       edu: "Education and human development are a regional strength, with solid schooling indicators and relatively strong HDI compared to neighbors.",
       history:
         "Panama's history is globally significant because the isthmus and the Canal sit at the center of world trade routes. Its geopolitical role exceeds its size.",
@@ -3568,7 +3568,8 @@ export const COUNTRIES: CountryData[] = [
         "Stability is weak to mixed, with high crime, governance fragility, and a history of institutional stress. Planning horizon is shorter than regional leaders.",
       lifestyle:
         "Lifestyle is a real upside if you like dramatic scenery and living history: volcanoes, lakes, jungles, and iconic Mayan landscapes.",
-      terrain: "Excellent terrain variety with highlands, volcanoes, rainforest, and both Pacific and Caribbean access.",
+      terrain:
+        "Excellent terrain variety with highlands, volcanoes, rainforest, and both Pacific and Caribbean access.",
       safety:
         "Safety is a major drag: homicide levels remain very high and security risks are non-trivial in several regions. Careful location choice is essential.",
       urban:
@@ -3581,10 +3582,10 @@ export const COUNTRIES: CountryData[] = [
       gov: "Governance is weak with persistent corruption risk. Institutional reliability is one of the country's defining constraints.",
       values:
         "Values are mixed but strongly rooted in Indigenous and traditional social structures, with a more conservative overall tone than major Latin metros.",
-      immi:
-        "Visitor entry is straightforward for many passports and regional mobility is easy, but long-stay family sponsorship is not a standout feature.",
+      immi: "Visitor entry is straightforward for many passports and regional mobility is easy, but long-stay family sponsorship is not a standout feature.",
       edu: "Education outcomes are below regional leaders, with shorter expected schooling and lower mean years of schooling.",
-      history: "History is a major strength: Guatemala sits at the heart of Maya civilization and later colonial Central American history.",
+      history:
+        "History is a major strength: Guatemala sits at the heart of Maya civilization and later colonial Central American history.",
       sum: "Guatemala is the most nature-and-culture rich of the three, but it pays for that with weak safety, weak governance, and a less developed economy. It suits lifestyle and history seekers more than stability optimizers.",
       deal: "The deal-breakers are crime risk and institutional weakness; the upside is dramatic nature and cultural depth at a lower housing cost than Panama.",
       parent:
@@ -3624,19 +3625,21 @@ export const COUNTRIES: CountryData[] = [
         "The economy is steady but not strong, with a high debt load and a security model that raises civil-liberties questions. Stability is improving but institutionally heavy.",
       lifestyle:
         "Lifestyle scores well for surf, volcanoes, lakes, and short travel times. The country packs a lot into a small footprint.",
-      terrain: "Varied terrain for a small country, mixing coastline, volcanoes, lakes, and forested highlands.",
+      terrain:
+        "Varied terrain for a small country, mixing coastline, volcanoes, lakes, and forested highlands.",
       safety:
         "Safety has improved dramatically on paper, but the gains are tied to aggressive emergency powers. Day-to-day safety can feel better than peers, with tradeoffs on civil liberties.",
-      urban: "San Salvador is the clear urban core, but the national urban system is compact and does not offer multiple major metros.",
-      health: "Health is middling, with decent life expectancy and workable infrastructure but no top-tier system depth.",
+      urban:
+        "San Salvador is the clear urban core, but the national urban system is compact and does not offer multiple major metros.",
+      health:
+        "Health is middling, with decent life expectancy and workable infrastructure but no top-tier system depth.",
       env: "Environmental appeal is decent with meaningful forest cover and renewable generation, though land pressure is higher than in Panama or Guatemala.",
       housing:
         "Housing is moderate rather than cheap by regional standards. Safer districts carry a premium, but costs stay below Panama.",
       gov: "Governance remains weak, with corruption concerns and high debt. The security-first approach concentrates power and reduces checks.",
       values:
         "Values are traditional and community-oriented, with political polarization around security and institutional concentration.",
-      immi:
-        "Entry is fairly easy for many visitors and regional mobility is smooth. Long-term sponsorship pathways exist but are not especially strong.",
+      immi: "Entry is fairly easy for many visitors and regional mobility is smooth. Long-term sponsorship pathways exist but are not especially strong.",
       edu: "Education sits below regional leaders, with lower schooling metrics than Costa Rica or Panama.",
       history:
         "History is meaningful: a dense Maya and colonial legacy layered with modern civil conflict and a high-profile security transformation.",
