@@ -402,15 +402,15 @@ export const COUNTRIES: CountryData[] = [
   },
   {
     c: "JP",
-    f: "🇯🇵",
+    f: "🇵",
     n: "Japan",
     r: "Asia",
     s: {
-      career: 6,
+      career: 4,
       tech: 6,
-      social: 4,
-      stability: 6,
-      lifestyle: 8,
+      social: 3,
+      stability: 5,
+      lifestyle: 5,
       terrain: 8,
       safety: 9,
       urban: 9,
@@ -418,21 +418,21 @@ export const COUNTRIES: CountryData[] = [
       env: 7,
       housing: 7,
       gov: 7,
-      values: 5,
+      values: 4,
       immi: 5,
       edu: 8,
       history: 5,
     },
     d: {
       career:
-        "Non-FAANG salaries 30-50% below Singapore (¥6-10M senior). FAANG Tokyo competitive. Traditional Japanese companies low-pay and seniority-based. Weak yen erodes international purchasing power.",
+        "Work culture is notoriously toxic — 'karoshi' (death by overwork) is a recognized social phenomenon. Rigid hierarchy, mandatory after-work drinking (nomikai), and expectation of unpaid overtime make the professional environment exhausting. Efficiency is often low despite long hours; presenteeism rules over output. Salaries have stagnated for decades while costs rise.",
       tech: "Google, Amazon, Meta Tokyo offices. Rakuten, Mercari, LINE/Yahoo Japan. Growing startup scene. Engineering culture improving from traditional low-comp model. FAANG raising the salary bar locally.",
       social:
         "Polite but socially distant. 'Gaijin bubble' well-documented in expat literature. Japanese language essential for real integration and friendship. Indian community very small. Cultural distance significant.",
       stability:
         "260% debt-to-GDP (highest OECD). Aging crisis (median age 49, TFR 1.20). BOJ yield-curve-control experiment ongoing. Strong institutions despite fiscal metrics. AI investment strong but demographics existential.",
       lifestyle:
-        "World-class food culture (Michelin stars capital of the world). Cultural richness (temples, onsen, seasons). Excellent quality of daily life. Work culture in traditional firms still brutal despite reforms.",
+        "World-class food culture and cultural richness, but daily life is heavily constrained by work demands. Disconnecting is difficult; weekends are often consumed by work or mandatory social obligations. The 'work-life balance' is among the worst in the developed world.",
       terrain:
         "Mountains (Fuji, Japanese Alps, Hokkaido ranges), coastlines on all sides, hot springs (3,000+ onsen), forests. Cherry blossom + autumn foliage seasons. Hokkaido to Okinawa tropical diversity.",
       safety:
@@ -451,8 +451,8 @@ export const COUNTRIES: CountryData[] = [
       edu: "PISA top-5 globally. Excellent K-12 system with high standards. Tokyo/Kyoto/Osaka universities strong (Tokyo #1 Asia in some rankings). Child safety exceptional. Strong youth outcomes.",
       history:
         "Japan's historical reckoning with its imperial era is the most significant unresolved accountability gap of any developed country reviewed. The Nanjing Massacre (~200,000 killed), comfort women system, Unit 731 biological warfare experiments, and broader colonization of Korea and Southeast Asia are not confronted with anything approaching Germany's standard. Textbooks remain contested. Politicians visit Yasukuni Shrine. Formal apologies are repeatedly walked back by subsequent governments. That said, post-war Japan genuinely transformed: Article 9 pacifism, nuclear victim consciousness (Hiroshima/Nagasaki), and an extraordinary culture of craft, discipline, and aesthetic care. The historical split is real — the cultural legacy of samurai/Meiji Japan is beautiful and productive; the unacknowledged imperial legacy is a significant moral failure.",
-      sum: "Uniquely combines affordable megacity housing, world's best urban transit, top-tier safety, and fast HSP PR pathway. But naturalization requires renouncing Indian citizenship. Social integration genuinely difficult.",
-      deal: "Must renounce Indian passport for citizenship (Japan enforces single nationality). Japanese language essential for everything. Social distance for foreigners structural. Weak yen. Parent sponsorship closed.",
+      sum: "Uniquely combines affordable megacity housing, world's best urban transit, and top-tier safety. However, the toxic work culture, social isolation, and requirement to renounce Indian citizenship for naturalization make it a difficult long-term home for most.",
+      deal: "Must renounce Indian passport for citizenship (Japan enforces single nationality). Social distance for foreigners structural. Weak yen. Parent sponsorship closed. Work culture is exhausting and rigid.",
       parent:
         "'Designated Activities' visa for dependent parents — discretionary, not routine. Effectively closed for single applicants without extraordinary circumstances. 90-day visit visas are the realistic option.",
     },
